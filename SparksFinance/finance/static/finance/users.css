@@ -1,0 +1,276 @@
+* {
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+  }
+  body{
+      background-image: url(https://cutewallpaper.org/21/new-york-street-wallpaper/Evening-street-in-New-York-wallpapers-and-images-.jpg);
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
+  }
+  /*Navbar*/
+  nav {
+    background: #222;
+    padding: 5px 20px;
+  }
+  ul {
+    list-style-type: none;
+  }
+  .menu a {
+    color: white;
+    text-decoration: none;
+  }
+  a:hover {
+    text-decoration: underline;
+  }
+  .logo a:hover {
+    text-decoration: none;
+  }
+  .menu li {
+    font-size: 16px;
+    padding: 15px 5px;
+    white-space: nowrap;
+  }
+  .logo a,
+  .toggle a {
+    font-size: 20px;
+  }
+  .button.secondary {
+    border-bottom: 1px #444 solid;
+  }
+  
+  /* Mobile menu */
+  .menu {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+  }
+  .toggle {
+    order: 1;
+  }
+  .item.button {
+    order: 2;
+  }
+  .item {
+    width: 100%;
+    text-align: center;
+    order: 3;
+    display: none;
+  }
+  .item.active {
+    display: block;
+  }
+  
+  /* Navbar Toggle */
+  .toggle {
+    cursor:pointer;
+  }
+  .bars {
+    background: #999;
+    display: inline-block;
+    height: 2px;
+    position: relative;
+    transition: background .2s ease-out;
+    width: 18px;
+  }
+  .bars:before,
+  .bars:after {
+    background: #999;
+    content: '';
+    display: block;
+    height: 100%;
+    position: absolute;
+    transition: all .2s ease-out;
+    width: 100%;
+  }
+  .bars:before {
+    top: 5px;
+  }
+  .bars:after {
+    top: -5px;
+  }
+  
+  /* Tablet menu */
+  @media all and (min-width: 468px) {
+    .menu {
+        justify-content: center;
+    }
+  
+    .logo {
+        flex: 1;
+    }
+  
+    .item.button {
+        width: auto;
+        order: 1;
+        display: block;
+    }
+    .toggle {
+        order: 2;
+    }
+    .button.secondary {
+        border: 0;
+    }
+    .button a {
+        padding: 7.5px 15px;
+        background: teal;
+        border: 1px #006d6d solid;
+        border-radius:50em;
+    }
+    .button.secondary a {
+        background: transparent;    
+    }
+    .button a:hover {
+        text-decoration: none;
+        transition:all .25s;
+    }
+    .button:not(.secondary) a:hover {
+        background: #006d6d;
+        border-color: #005959;
+    }
+    .button.secondary a:hover {
+        color: #ddd;
+    } 
+  }
+  
+  /* Desktop menu */
+  @media all and (min-width: 768px) {
+    .item {
+        display: block;
+        width: auto;
+    }
+    .toggle {
+        display: none;
+    }
+    .logo {
+        order: 0;
+    }
+    .item {
+        order: 1;
+    }
+    .button {
+        order: 2;
+    }
+    .menu li {
+        padding: 15px 10px;
+    }
+    .menu li.button {
+        padding-right: 0;
+    }
+  }
+  /*Table*/
+  .table-container{
+      padding: 0 10%;
+      margin: 40px auto 0;
+  }
+  .heading{
+      text-align: center;
+      margin-bottom: 40px;
+      color: white;
+  }
+  .table{
+      width: 100%;
+      border-collapse: collapse;
+  }
+  .table thead{
+      background-color:lightblue;
+  }
+  .table thead tr th{
+      font-size: 14px;
+      font-weight: 600;
+      letter-spacing: 0.35px;
+      /*color:#FFFFFF;*/
+      opacity:1;
+      padding: 12px;
+      border:1px solid black;
+  }
+  .table tbody tr td{
+      font-size: 14px;
+      letter-spacing: 0.35px;
+      font-weight: normal;
+      padding: 8px;
+      text-align: center;
+      border:1px solid black;
+      background-color: white;
+  }
+  .table .text_open{
+      font-size:14px;
+      font-weight: bold;
+      letter-spacing: 0.35px;
+  }
+  .table tbody tr td .btn{
+      width: 130px;
+      text-decoration:none;
+      line-height: 35px;
+      display: inline-block;
+      background-color: #FF1046;
+      font-weight: medium;
+      text-align: center;
+      color:#FFFFFF;
+      vertical-align: middle;
+      user-select: none;
+      border:1px solid transparent;
+      font-size: 14px;
+      opacity: 1;
+  }
+  @media (max-width: 768px){
+      .table thead{
+          display: none;
+      }
+      .tabl,.table tbody,.table tr,.table td{
+          display: block;
+          width: 100%;
+      }
+      .table tr{
+          margin-bottom:15px;
+      }
+      .table tbody tr td{
+          text-align:right;
+          padding-left: 50%;
+          position:relative;
+      }
+      .table td:before{
+          content:attr(data-label);
+          position: absolute;
+          left: 0;
+          width: 50%;
+          padding-left: 15px;
+          font-weight: 600;
+          font-size: 14px;
+          text-align: left;
+      }
+  }
+  /*Footer*/
+  .footer-container{
+    background: black;
+    padding:2rem 0 4rem 0;
+  }
+  .footer{
+    background-image: black;
+    color:white;
+    text-align: center;
+    display: flex;
+    height:40vh;
+    justify-content: center;
+    flex-wrap: wrap;
+    margin:0 auto;
+  }
+  .footer-heading{
+    display:flex;
+    flex-direction: column;
+    margin-right: 4rem;
+  }
+  .footer-heading h2{
+    margin-bottom:2rem;
+  }
+  .footer-heading a{
+    color:#fff;
+    text-decoration: none;
+  
+  }
+  .footer-heading a:hover{
+    color:rgb(10,233,23);
+    transition:0.3s ease-out; 
+  }

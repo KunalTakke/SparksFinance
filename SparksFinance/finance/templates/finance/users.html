@@ -1,0 +1,37 @@
+{% extends 'finance/basic.html' %}
+{% block title %}Users{% endblock %}
+{% load static %}
+    {% block css %} <link rel="stylesheet" href="{% static 'finance/users.css' %}"> {% endblock %}
+	{% block body %}  
+    <!-- Table -->
+	<div class="table-container">
+		<h1 class="heading">Users</h1>
+		
+		<table class="table">
+			<thead>
+				<tr>
+					<th>Account No</th>
+					<th>Holder Name</th>
+					<th>Branch Name</th>
+					<th>Current Balance</th>
+					<th>E-mail</th>
+					<th>Transfer</th>
+				</tr>
+			</thead>
+			<tbody>
+				<!-- 1 -->
+				{% for i in users %}
+				<tr>
+					<td data-label="Account No">{{i.account}}</td>
+					<td data-label="Holder Name">{{i.name}}</td>
+					<td data-label="Branch Name">{{i.branch}}</td>
+					<td data-label="Current Balance">{{i.balance}}</td>
+					<td data-label="E-mail">{{i.email}}</td>
+						<td data-label="Transfer"><a href="/finance/transferMoney" class="btn" type="submit" name="submit" value="{{i.name}}">Transfer Money</a></td>
+				</tr>
+				{% endfor %}
+			</tbody>
+		</table>
+		
+	</div>
+	{% endblock %}

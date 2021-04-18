@@ -1,0 +1,39 @@
+{% extends 'finance/basic.html' %}
+{% block title %}Transfer History {% endblock %}
+{% load static %}
+    {% block css %} <link rel="stylesheet" href="{% static 'finance/transferHistory.css' %}"> {% endblock %}
+{% block body %}  
+    <!-- Table -->
+    <div class="table-container">
+        <h1 class="heading">Transfer History</h1>
+        <table class="table">
+            <thead>
+                <tr>
+                    <th>Sender Name</th>
+                    <th>Receiver Name</th>
+                    <th>Amount Transfered</th>
+                    <th>Transfer Date</th>
+                     <th>Time</th> 
+                </tr>
+            </thead>
+            <tbody>
+                <!-- 1 -->
+                <!-- <tr>
+                    <td data-label="Sender">demo sender</td>
+                    <td data-label="Receiver">Kunal</td>
+                    <td data-label="Amount">10000</td>
+                    <td data-label="Date">10056734</td>
+                </tr>-->
+                {% for i in transfer %}
+                <tr>
+                <td data-label="Sender">{{i.name}}</td>
+                    <td data-label="Receiver">{{i.receiver}}</td>
+                    <td data-label="Amount">{{i.amount}}</td>
+                    <td data-label="Date">{{i.date}}</td>
+                    <td data-label="Time">{{i.time}}</td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </div>
+    {% endblock %}
