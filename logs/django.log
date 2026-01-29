@@ -1,0 +1,858 @@
+INFO 2026-01-29 00:54:19,314 autoreload 20431 8756568640 Watching for file changes with StatReloader
+INFO 2026-01-29 00:55:46,488 autoreload 20431 8756568640 /Users/kunalsachintakke/Documents/personal/projects/sparksFinanceProject/SparksFinance/SparksFinance/settings.py changed, reloading.
+INFO 2026-01-29 00:55:46,806 autoreload 20487 8756568640 Watching for file changes with StatReloader
+WARNING 2026-01-29 00:56:10,640 log 20487 6198439936 Not Found: /finance/
+WARNING 2026-01-29 00:56:10,708 log 20487 6198439936 Not Found: /favicon.ico
+WARNING 2026-01-29 00:56:21,580 log 20487 6198439936 Not Found: /finance/
+INFO 2026-01-29 00:57:19,198 autoreload 20487 8756568640 /Users/kunalsachintakke/Documents/personal/projects/sparksFinanceProject/SparksFinance/SparksFinance/urls.py changed, reloading.
+INFO 2026-01-29 00:57:19,500 autoreload 20624 8756568640 Watching for file changes with StatReloader
+INFO 2026-01-29 00:57:25,660 autoreload 20624 8756568640 /Users/kunalsachintakke/Documents/personal/projects/sparksFinanceProject/SparksFinance/SparksFinance/urls.py changed, reloading.
+INFO 2026-01-29 00:57:25,827 autoreload 20637 8756568640 Watching for file changes with StatReloader
+INFO 2026-01-29 00:57:28,906 autoreload 20637 8756568640 /Users/kunalsachintakke/Documents/personal/projects/sparksFinanceProject/SparksFinance/SparksFinance/urls.py changed, reloading.
+INFO 2026-01-29 00:57:29,064 autoreload 20645 8756568640 Watching for file changes with StatReloader
+INFO 2026-01-29 00:57:51,582 autoreload 20645 8756568640 /Users/kunalsachintakke/Documents/personal/projects/sparksFinanceProject/SparksFinance/SparksFinance/urls.py changed, reloading.
+INFO 2026-01-29 00:57:51,827 autoreload 20658 8756568640 Watching for file changes with StatReloader
+WARNING 2026-01-29 00:57:54,517 log 20658 6191935488 Not Found: /finance/
+WARNING 2026-01-29 00:57:55,489 log 20658 6191935488 Not Found: /finance/
+WARNING 2026-01-29 00:57:55,517 log 20658 6191935488 Not Found: /favicon.ico
+WARNING 2026-01-29 00:57:56,916 log 20658 6191935488 Not Found: /finance/
+WARNING 2026-01-29 00:57:56,940 log 20658 6191935488 Not Found: /favicon.ico
+WARNING 2026-01-29 00:57:57,232 log 20658 6191935488 Not Found: /finance/
+WARNING 2026-01-29 00:57:57,250 log 20658 6191935488 Not Found: /favicon.ico
+WARNING 2026-01-29 00:57:57,459 log 20658 6191935488 Not Found: /finance/
+WARNING 2026-01-29 00:57:57,474 log 20658 6191935488 Not Found: /favicon.ico
+WARNING 2026-01-29 00:58:54,523 log 20658 6191935488 Not Found: /finance/
+WARNING 2026-01-29 00:58:57,490 log 20658 6191935488 Not Found: /finance/
+WARNING 2026-01-29 00:59:02,792 log 20658 6208761856 Not Found: /finance/
+ERROR 2026-01-29 00:59:05,302 log 20658 6191935488 Internal Server Error: /login/
+Traceback (most recent call last):
+  File "/Users/kunalsachintakke/Documents/personal/projects/sparksFinanceProject/SparksFinance/.sparkEnv/lib/python3.14/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/Users/kunalsachintakke/Documents/personal/projects/sparksFinanceProject/SparksFinance/.sparkEnv/lib/python3.14/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/Library/Frameworks/Python.framework/Versions/3.14/lib/python3.14/contextlib.py", line 85, in inner
+    return func(*args, **kwds)
+  File "/Users/kunalsachintakke/Documents/personal/projects/sparksFinanceProject/SparksFinance/finance/views.py", line 60, in login_view
+    return render(request, 'finance/login.html', {'form': form})
+  File "/Users/kunalsachintakke/Documents/personal/projects/sparksFinanceProject/SparksFinance/.sparkEnv/lib/python3.14/site-packages/django/shortcuts.py", line 24, in render
+    content = loader.render_to_string(template_name, context, request, using=using)
+  File "/Users/kunalsachintakke/Documents/personal/projects/sparksFinanceProject/SparksFinance/.sparkEnv/lib/python3.14/site-packages/django/template/loader.py", line 61, in render_to_string
+    template = get_template(template_name, using=using)
+  File "/Users/kunalsachintakke/Documents/personal/projects/sparksFinanceProject/SparksFinance/.sparkEnv/lib/python3.14/site-packages/django/template/loader.py", line 19, in get_template
+    raise TemplateDoesNotExist(template_name, chain=chain)
+django.template.exceptions.TemplateDoesNotExist: finance/login.html
+INFO 2026-01-29 01:00:14,330 autoreload 20878 8756568640 Watching for file changes with StatReloader
+ERROR 2026-01-29 01:00:19,269 log 20878 6192459776 Internal Server Error: /login/
+Traceback (most recent call last):
+  File "/Users/kunalsachintakke/Documents/personal/projects/sparksFinanceProject/SparksFinance/.sparkEnv/lib/python3.14/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/Users/kunalsachintakke/Documents/personal/projects/sparksFinanceProject/SparksFinance/.sparkEnv/lib/python3.14/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/Library/Frameworks/Python.framework/Versions/3.14/lib/python3.14/contextlib.py", line 85, in inner
+    return func(*args, **kwds)
+  File "/Users/kunalsachintakke/Documents/personal/projects/sparksFinanceProject/SparksFinance/finance/views.py", line 60, in login_view
+    return render(request, 'finance/login.html', {'form': form})
+  File "/Users/kunalsachintakke/Documents/personal/projects/sparksFinanceProject/SparksFinance/.sparkEnv/lib/python3.14/site-packages/django/shortcuts.py", line 24, in render
+    content = loader.render_to_string(template_name, context, request, using=using)
+  File "/Users/kunalsachintakke/Documents/personal/projects/sparksFinanceProject/SparksFinance/.sparkEnv/lib/python3.14/site-packages/django/template/loader.py", line 61, in render_to_string
+    template = get_template(template_name, using=using)
+  File "/Users/kunalsachintakke/Documents/personal/projects/sparksFinanceProject/SparksFinance/.sparkEnv/lib/python3.14/site-packages/django/template/loader.py", line 19, in get_template
+    raise TemplateDoesNotExist(template_name, chain=chain)
+django.template.exceptions.TemplateDoesNotExist: finance/login.html
+WARNING 2026-01-29 01:00:19,321 log 20878 6192459776 Not Found: /favicon.ico
+WARNING 2026-01-29 01:00:22,944 log 20878 6192459776 Not Found: /finance/
+WARNING 2026-01-29 01:00:23,257 log 20878 6192459776 Not Found: /finance/
+WARNING 2026-01-29 01:02:34,424 log 20878 6192459776 Not Found: /finance/
+ERROR 2026-01-29 01:03:15,733 log 20878 6209286144 Internal Server Error: /admin/auth/group/add/
+Traceback (most recent call last):
+  File "/Users/kunalsachintakke/Documents/personal/projects/sparksFinanceProject/SparksFinance/.sparkEnv/lib/python3.14/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/Users/kunalsachintakke/Documents/personal/projects/sparksFinanceProject/SparksFinance/.sparkEnv/lib/python3.14/site-packages/django/core/handlers/base.py", line 220, in _get_response
+    response = response.render()
+  File "/Users/kunalsachintakke/Documents/personal/projects/sparksFinanceProject/SparksFinance/.sparkEnv/lib/python3.14/site-packages/django/template/response.py", line 114, in render
+    self.content = self.rendered_content
+                   ^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/kunalsachintakke/Documents/personal/projects/sparksFinanceProject/SparksFinance/.sparkEnv/lib/python3.14/site-packages/django/template/response.py", line 92, in rendered_content
+    return template.render(context, self._request)
+           ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/kunalsachintakke/Documents/personal/projects/sparksFinanceProject/SparksFinance/.sparkEnv/lib/python3.14/site-packages/django/template/backends/django.py", line 61, in render
+    return self.template.render(context)
+           ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "/Users/kunalsachintakke/Documents/personal/projects/sparksFinanceProject/SparksFinance/.sparkEnv/lib/python3.14/site-packages/django/template/base.py", line 175, in render
+    return self._render(context)
+           ~~~~~~~~~~~~^^^^^^^^^
+  File "/Users/kunalsachintakke/Documents/personal/projects/sparksFinanceProject/SparksFinance/.sparkEnv/lib/python3.14/site-packages/django/template/base.py", line 167, in _render
+    return self.nodelist.render(context)
+           ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "/Users/kunalsachintakke/Documents/personal/projects/sparksFinanceProject/SparksFinance/.sparkEnv/lib/python3.14/site-packages/django/template/base.py", line 1005, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "/Users/kunalsachintakke/Documents/personal/projects/sparksFinanceProject/SparksFinance/.sparkEnv/lib/python3.14/site-packages/django/template/base.py", line 966, in render_annotated
+    return self.render(context)
+           ~~~~~~~~~~~^^^^^^^^^
+  File "/Users/kunalsachintakke/Documents/personal/projects/sparksFinanceProject/SparksFinance/.sparkEnv/lib/python3.14/site-packages/django/template/loader_tags.py", line 157, in render
+    return compiled_parent._render(context)
+           ~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "/Users/kunalsachintakke/Documents/personal/projects/sparksFinanceProject/SparksFinance/.sparkEnv/lib/python3.14/site-packages/django/template/base.py", line 167, in _render
+    return self.nodelist.render(context)
+           ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "/Users/kunalsachintakke/Documents/personal/projects/sparksFinanceProject/SparksFinance/.sparkEnv/lib/python3.14/site-packages/django/template/base.py", line 1005, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "/Users/kunalsachintakke/Documents/personal/projects/sparksFinanceProject/SparksFinance/.sparkEnv/lib/python3.14/site-packages/django/template/base.py", line 966, in render_annotated
+    return self.render(context)
+           ~~~~~~~~~~~^^^^^^^^^
+  File "/Users/kunalsachintakke/Documents/personal/projects/sparksFinanceProject/SparksFinance/.sparkEnv/lib/python3.14/site-packages/django/template/loader_tags.py", line 157, in render
+    return compiled_parent._render(context)
+           ~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "/Users/kunalsachintakke/Documents/personal/projects/sparksFinanceProject/SparksFinance/.sparkEnv/lib/python3.14/site-packages/django/template/base.py", line 167, in _render
+    return self.nodelist.render(context)
+           ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "/Users/kunalsachintakke/Documents/personal/projects/sparksFinanceProject/SparksFinance/.sparkEnv/lib/python3.14/site-packages/django/template/base.py", line 1005, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "/Users/kunalsachintakke/Documents/personal/projects/sparksFinanceProject/SparksFinance/.sparkEnv/lib/python3.14/site-packages/django/template/base.py", line 966, in render_annotated
+    return self.render(context)
+           ~~~~~~~~~~~^^^^^^^^^
+  File "/Users/kunalsachintakke/Documents/personal/projects/sparksFinanceProject/SparksFinance/.sparkEnv/lib/python3.14/site-packages/django/template/loader_tags.py", line 63, in render
+    result = block.nodelist.render(context)
+  File "/Users/kunalsachintakke/Documents/personal/projects/sparksFinanceProject/SparksFinance/.sparkEnv/lib/python3.14/site-packages/django/template/base.py", line 1005, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "/Users/kunalsachintakke/Documents/personal/projects/sparksFinanceProject/SparksFinance/.sparkEnv/lib/python3.14/site-packages/django/template/base.py", line 966, in render_annotated
+    return self.render(context)
+           ~~~~~~~~~~~^^^^^^^^^
+  File "/Users/kunalsachintakke/Documents/personal/projects/sparksFinanceProject/SparksFinance/.sparkEnv/lib/python3.14/site-packages/django/template/loader_tags.py", line 63, in render
+    result = block.nodelist.render(context)
+  File "/Users/kunalsachintakke/Documents/personal/projects/sparksFinanceProject/SparksFinance/.sparkEnv/lib/python3.14/site-packages/django/template/base.py", line 1005, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "/Users/kunalsachintakke/Documents/personal/projects/sparksFinanceProject/SparksFinance/.sparkEnv/lib/python3.14/site-packages/django/template/base.py", line 966, in render_annotated
+    return self.render(context)
+           ~~~~~~~~~~~^^^^^^^^^
+  File "/Users/kunalsachintakke/Documents/personal/projects/sparksFinanceProject/SparksFinance/.sparkEnv/lib/python3.14/site-packages/django/contrib/admin/templatetags/base.py", line 45, in render
+    return super().render(context)
+           ~~~~~~~~~~~~~~^^^^^^^^^
+  File "/Users/kunalsachintakke/Documents/personal/projects/sparksFinanceProject/SparksFinance/.sparkEnv/lib/python3.14/site-packages/django/template/library.py", line 271, in render
+    new_context = context.new(_dict)
+  File "/Users/kunalsachintakke/Documents/personal/projects/sparksFinanceProject/SparksFinance/.sparkEnv/lib/python3.14/site-packages/django/template/context.py", line 265, in new
+    new_context = super().new(values)
+  File "/Users/kunalsachintakke/Documents/personal/projects/sparksFinanceProject/SparksFinance/.sparkEnv/lib/python3.14/site-packages/django/template/context.py", line 110, in new
+    new_context = copy(self)
+  File "/Library/Frameworks/Python.framework/Versions/3.14/lib/python3.14/copy.py", line 82, in copy
+    return copier(x)
+  File "/Users/kunalsachintakke/Documents/personal/projects/sparksFinanceProject/SparksFinance/.sparkEnv/lib/python3.14/site-packages/django/template/context.py", line 158, in __copy__
+    duplicate = super().__copy__()
+  File "/Users/kunalsachintakke/Documents/personal/projects/sparksFinanceProject/SparksFinance/.sparkEnv/lib/python3.14/site-packages/django/template/context.py", line 39, in __copy__
+    duplicate.dicts = self.dicts[:]
+    ^^^^^^^^^^^^^^^
+AttributeError: 'super' object has no attribute 'dicts' and no __dict__ for setting new attributes
+ERROR 2026-01-29 01:03:21,843 log 20878 6209286144 Internal Server Error: /admin/auth/group/
+Traceback (most recent call last):
+  File "/Users/kunalsachintakke/Documents/personal/projects/sparksFinanceProject/SparksFinance/.sparkEnv/lib/python3.14/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/Users/kunalsachintakke/Documents/personal/projects/sparksFinanceProject/SparksFinance/.sparkEnv/lib/python3.14/site-packages/django/core/handlers/base.py", line 220, in _get_response
+    response = response.render()
+  File "/Users/kunalsachintakke/Documents/personal/projects/sparksFinanceProject/SparksFinance/.sparkEnv/lib/python3.14/site-packages/django/template/response.py", line 114, in render
+    self.content = self.rendered_content
+                   ^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/kunalsachintakke/Documents/personal/projects/sparksFinanceProject/SparksFinance/.sparkEnv/lib/python3.14/site-packages/django/template/response.py", line 92, in rendered_content
+    return template.render(context, self._request)
+           ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/kunalsachintakke/Documents/personal/projects/sparksFinanceProject/SparksFinance/.sparkEnv/lib/python3.14/site-packages/django/template/backends/django.py", line 61, in render
+    return self.template.render(context)
+           ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "/Users/kunalsachintakke/Documents/personal/projects/sparksFinanceProject/SparksFinance/.sparkEnv/lib/python3.14/site-packages/django/template/base.py", line 175, in render
+    return self._render(context)
+           ~~~~~~~~~~~~^^^^^^^^^
+  File "/Users/kunalsachintakke/Documents/personal/projects/sparksFinanceProject/SparksFinance/.sparkEnv/lib/python3.14/site-packages/django/template/base.py", line 167, in _render
+    return self.nodelist.render(context)
+           ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "/Users/kunalsachintakke/Documents/personal/projects/sparksFinanceProject/SparksFinance/.sparkEnv/lib/python3.14/site-packages/django/template/base.py", line 1005, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "/Users/kunalsachintakke/Documents/personal/projects/sparksFinanceProject/SparksFinance/.sparkEnv/lib/python3.14/site-packages/django/template/base.py", line 966, in render_annotated
+    return self.render(context)
+           ~~~~~~~~~~~^^^^^^^^^
+  File "/Users/kunalsachintakke/Documents/personal/projects/sparksFinanceProject/SparksFinance/.sparkEnv/lib/python3.14/site-packages/django/template/loader_tags.py", line 157, in render
+    return compiled_parent._render(context)
+           ~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "/Users/kunalsachintakke/Documents/personal/projects/sparksFinanceProject/SparksFinance/.sparkEnv/lib/python3.14/site-packages/django/template/base.py", line 167, in _render
+    return self.nodelist.render(context)
+           ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "/Users/kunalsachintakke/Documents/personal/projects/sparksFinanceProject/SparksFinance/.sparkEnv/lib/python3.14/site-packages/django/template/base.py", line 1005, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "/Users/kunalsachintakke/Documents/personal/projects/sparksFinanceProject/SparksFinance/.sparkEnv/lib/python3.14/site-packages/django/template/base.py", line 966, in render_annotated
+    return self.render(context)
+           ~~~~~~~~~~~^^^^^^^^^
+  File "/Users/kunalsachintakke/Documents/personal/projects/sparksFinanceProject/SparksFinance/.sparkEnv/lib/python3.14/site-packages/django/template/loader_tags.py", line 157, in render
+    return compiled_parent._render(context)
+           ~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "/Users/kunalsachintakke/Documents/personal/projects/sparksFinanceProject/SparksFinance/.sparkEnv/lib/python3.14/site-packages/django/template/base.py", line 167, in _render
+    return self.nodelist.render(context)
+           ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "/Users/kunalsachintakke/Documents/personal/projects/sparksFinanceProject/SparksFinance/.sparkEnv/lib/python3.14/site-packages/django/template/base.py", line 1005, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "/Users/kunalsachintakke/Documents/personal/projects/sparksFinanceProject/SparksFinance/.sparkEnv/lib/python3.14/site-packages/django/template/base.py", line 966, in render_annotated
+    return self.render(context)
+           ~~~~~~~~~~~^^^^^^^^^
+  File "/Users/kunalsachintakke/Documents/personal/projects/sparksFinanceProject/SparksFinance/.sparkEnv/lib/python3.14/site-packages/django/template/loader_tags.py", line 63, in render
+    result = block.nodelist.render(context)
+  File "/Users/kunalsachintakke/Documents/personal/projects/sparksFinanceProject/SparksFinance/.sparkEnv/lib/python3.14/site-packages/django/template/base.py", line 1005, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "/Users/kunalsachintakke/Documents/personal/projects/sparksFinanceProject/SparksFinance/.sparkEnv/lib/python3.14/site-packages/django/template/base.py", line 966, in render_annotated
+    return self.render(context)
+           ~~~~~~~~~~~^^^^^^^^^
+  File "/Users/kunalsachintakke/Documents/personal/projects/sparksFinanceProject/SparksFinance/.sparkEnv/lib/python3.14/site-packages/django/template/loader_tags.py", line 63, in render
+    result = block.nodelist.render(context)
+  File "/Users/kunalsachintakke/Documents/personal/projects/sparksFinanceProject/SparksFinance/.sparkEnv/lib/python3.14/site-packages/django/template/base.py", line 1005, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "/Users/kunalsachintakke/Documents/personal/projects/sparksFinanceProject/SparksFinance/.sparkEnv/lib/python3.14/site-packages/django/template/base.py", line 966, in render_annotated
+    return self.render(context)
+           ~~~~~~~~~~~^^^^^^^^^
+  File "/Users/kunalsachintakke/Documents/personal/projects/sparksFinanceProject/SparksFinance/.sparkEnv/lib/python3.14/site-packages/django/template/loader_tags.py", line 63, in render
+    result = block.nodelist.render(context)
+  File "/Users/kunalsachintakke/Documents/personal/projects/sparksFinanceProject/SparksFinance/.sparkEnv/lib/python3.14/site-packages/django/template/base.py", line 1005, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "/Users/kunalsachintakke/Documents/personal/projects/sparksFinanceProject/SparksFinance/.sparkEnv/lib/python3.14/site-packages/django/template/base.py", line 966, in render_annotated
+    return self.render(context)
+           ~~~~~~~~~~~^^^^^^^^^
+  File "/Users/kunalsachintakke/Documents/personal/projects/sparksFinanceProject/SparksFinance/.sparkEnv/lib/python3.14/site-packages/django/contrib/admin/templatetags/base.py", line 45, in render
+    return super().render(context)
+           ~~~~~~~~~~~~~~^^^^^^^^^
+  File "/Users/kunalsachintakke/Documents/personal/projects/sparksFinanceProject/SparksFinance/.sparkEnv/lib/python3.14/site-packages/django/template/library.py", line 271, in render
+    new_context = context.new(_dict)
+  File "/Users/kunalsachintakke/Documents/personal/projects/sparksFinanceProject/SparksFinance/.sparkEnv/lib/python3.14/site-packages/django/template/context.py", line 265, in new
+    new_context = super().new(values)
+  File "/Users/kunalsachintakke/Documents/personal/projects/sparksFinanceProject/SparksFinance/.sparkEnv/lib/python3.14/site-packages/django/template/context.py", line 110, in new
+    new_context = copy(self)
+  File "/Library/Frameworks/Python.framework/Versions/3.14/lib/python3.14/copy.py", line 82, in copy
+    return copier(x)
+  File "/Users/kunalsachintakke/Documents/personal/projects/sparksFinanceProject/SparksFinance/.sparkEnv/lib/python3.14/site-packages/django/template/context.py", line 158, in __copy__
+    duplicate = super().__copy__()
+  File "/Users/kunalsachintakke/Documents/personal/projects/sparksFinanceProject/SparksFinance/.sparkEnv/lib/python3.14/site-packages/django/template/context.py", line 39, in __copy__
+    duplicate.dicts = self.dicts[:]
+    ^^^^^^^^^^^^^^^
+AttributeError: 'super' object has no attribute 'dicts' and no __dict__ for setting new attributes
+ERROR 2026-01-29 01:03:25,710 log 20878 6209286144 Internal Server Error: /admin/finance/bankaccount/add/
+Traceback (most recent call last):
+  File "/Users/kunalsachintakke/Documents/personal/projects/sparksFinanceProject/SparksFinance/.sparkEnv/lib/python3.14/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/Users/kunalsachintakke/Documents/personal/projects/sparksFinanceProject/SparksFinance/.sparkEnv/lib/python3.14/site-packages/django/core/handlers/base.py", line 220, in _get_response
+    response = response.render()
+  File "/Users/kunalsachintakke/Documents/personal/projects/sparksFinanceProject/SparksFinance/.sparkEnv/lib/python3.14/site-packages/django/template/response.py", line 114, in render
+    self.content = self.rendered_content
+                   ^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/kunalsachintakke/Documents/personal/projects/sparksFinanceProject/SparksFinance/.sparkEnv/lib/python3.14/site-packages/django/template/response.py", line 92, in rendered_content
+    return template.render(context, self._request)
+           ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/kunalsachintakke/Documents/personal/projects/sparksFinanceProject/SparksFinance/.sparkEnv/lib/python3.14/site-packages/django/template/backends/django.py", line 61, in render
+    return self.template.render(context)
+           ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "/Users/kunalsachintakke/Documents/personal/projects/sparksFinanceProject/SparksFinance/.sparkEnv/lib/python3.14/site-packages/django/template/base.py", line 175, in render
+    return self._render(context)
+           ~~~~~~~~~~~~^^^^^^^^^
+  File "/Users/kunalsachintakke/Documents/personal/projects/sparksFinanceProject/SparksFinance/.sparkEnv/lib/python3.14/site-packages/django/template/base.py", line 167, in _render
+    return self.nodelist.render(context)
+           ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "/Users/kunalsachintakke/Documents/personal/projects/sparksFinanceProject/SparksFinance/.sparkEnv/lib/python3.14/site-packages/django/template/base.py", line 1005, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "/Users/kunalsachintakke/Documents/personal/projects/sparksFinanceProject/SparksFinance/.sparkEnv/lib/python3.14/site-packages/django/template/base.py", line 966, in render_annotated
+    return self.render(context)
+           ~~~~~~~~~~~^^^^^^^^^
+  File "/Users/kunalsachintakke/Documents/personal/projects/sparksFinanceProject/SparksFinance/.sparkEnv/lib/python3.14/site-packages/django/template/loader_tags.py", line 157, in render
+    return compiled_parent._render(context)
+           ~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "/Users/kunalsachintakke/Documents/personal/projects/sparksFinanceProject/SparksFinance/.sparkEnv/lib/python3.14/site-packages/django/template/base.py", line 167, in _render
+    return self.nodelist.render(context)
+           ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "/Users/kunalsachintakke/Documents/personal/projects/sparksFinanceProject/SparksFinance/.sparkEnv/lib/python3.14/site-packages/django/template/base.py", line 1005, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "/Users/kunalsachintakke/Documents/personal/projects/sparksFinanceProject/SparksFinance/.sparkEnv/lib/python3.14/site-packages/django/template/base.py", line 966, in render_annotated
+    return self.render(context)
+           ~~~~~~~~~~~^^^^^^^^^
+  File "/Users/kunalsachintakke/Documents/personal/projects/sparksFinanceProject/SparksFinance/.sparkEnv/lib/python3.14/site-packages/django/template/loader_tags.py", line 157, in render
+    return compiled_parent._render(context)
+           ~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "/Users/kunalsachintakke/Documents/personal/projects/sparksFinanceProject/SparksFinance/.sparkEnv/lib/python3.14/site-packages/django/template/base.py", line 167, in _render
+    return self.nodelist.render(context)
+           ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "/Users/kunalsachintakke/Documents/personal/projects/sparksFinanceProject/SparksFinance/.sparkEnv/lib/python3.14/site-packages/django/template/base.py", line 1005, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "/Users/kunalsachintakke/Documents/personal/projects/sparksFinanceProject/SparksFinance/.sparkEnv/lib/python3.14/site-packages/django/template/base.py", line 966, in render_annotated
+    return self.render(context)
+           ~~~~~~~~~~~^^^^^^^^^
+  File "/Users/kunalsachintakke/Documents/personal/projects/sparksFinanceProject/SparksFinance/.sparkEnv/lib/python3.14/site-packages/django/template/loader_tags.py", line 63, in render
+    result = block.nodelist.render(context)
+  File "/Users/kunalsachintakke/Documents/personal/projects/sparksFinanceProject/SparksFinance/.sparkEnv/lib/python3.14/site-packages/django/template/base.py", line 1005, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "/Users/kunalsachintakke/Documents/personal/projects/sparksFinanceProject/SparksFinance/.sparkEnv/lib/python3.14/site-packages/django/template/base.py", line 966, in render_annotated
+    return self.render(context)
+           ~~~~~~~~~~~^^^^^^^^^
+  File "/Users/kunalsachintakke/Documents/personal/projects/sparksFinanceProject/SparksFinance/.sparkEnv/lib/python3.14/site-packages/django/template/loader_tags.py", line 63, in render
+    result = block.nodelist.render(context)
+  File "/Users/kunalsachintakke/Documents/personal/projects/sparksFinanceProject/SparksFinance/.sparkEnv/lib/python3.14/site-packages/django/template/base.py", line 1005, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "/Users/kunalsachintakke/Documents/personal/projects/sparksFinanceProject/SparksFinance/.sparkEnv/lib/python3.14/site-packages/django/template/base.py", line 966, in render_annotated
+    return self.render(context)
+           ~~~~~~~~~~~^^^^^^^^^
+  File "/Users/kunalsachintakke/Documents/personal/projects/sparksFinanceProject/SparksFinance/.sparkEnv/lib/python3.14/site-packages/django/contrib/admin/templatetags/base.py", line 45, in render
+    return super().render(context)
+           ~~~~~~~~~~~~~~^^^^^^^^^
+  File "/Users/kunalsachintakke/Documents/personal/projects/sparksFinanceProject/SparksFinance/.sparkEnv/lib/python3.14/site-packages/django/template/library.py", line 271, in render
+    new_context = context.new(_dict)
+  File "/Users/kunalsachintakke/Documents/personal/projects/sparksFinanceProject/SparksFinance/.sparkEnv/lib/python3.14/site-packages/django/template/context.py", line 265, in new
+    new_context = super().new(values)
+  File "/Users/kunalsachintakke/Documents/personal/projects/sparksFinanceProject/SparksFinance/.sparkEnv/lib/python3.14/site-packages/django/template/context.py", line 110, in new
+    new_context = copy(self)
+  File "/Library/Frameworks/Python.framework/Versions/3.14/lib/python3.14/copy.py", line 82, in copy
+    return copier(x)
+  File "/Users/kunalsachintakke/Documents/personal/projects/sparksFinanceProject/SparksFinance/.sparkEnv/lib/python3.14/site-packages/django/template/context.py", line 158, in __copy__
+    duplicate = super().__copy__()
+  File "/Users/kunalsachintakke/Documents/personal/projects/sparksFinanceProject/SparksFinance/.sparkEnv/lib/python3.14/site-packages/django/template/context.py", line 39, in __copy__
+    duplicate.dicts = self.dicts[:]
+    ^^^^^^^^^^^^^^^
+AttributeError: 'super' object has no attribute 'dicts' and no __dict__ for setting new attributes
+ERROR 2026-01-29 01:03:28,502 log 20878 6209286144 Internal Server Error: /admin/finance/auditlog/
+Traceback (most recent call last):
+  File "/Users/kunalsachintakke/Documents/personal/projects/sparksFinanceProject/SparksFinance/.sparkEnv/lib/python3.14/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/Users/kunalsachintakke/Documents/personal/projects/sparksFinanceProject/SparksFinance/.sparkEnv/lib/python3.14/site-packages/django/core/handlers/base.py", line 220, in _get_response
+    response = response.render()
+  File "/Users/kunalsachintakke/Documents/personal/projects/sparksFinanceProject/SparksFinance/.sparkEnv/lib/python3.14/site-packages/django/template/response.py", line 114, in render
+    self.content = self.rendered_content
+                   ^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/kunalsachintakke/Documents/personal/projects/sparksFinanceProject/SparksFinance/.sparkEnv/lib/python3.14/site-packages/django/template/response.py", line 92, in rendered_content
+    return template.render(context, self._request)
+           ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/kunalsachintakke/Documents/personal/projects/sparksFinanceProject/SparksFinance/.sparkEnv/lib/python3.14/site-packages/django/template/backends/django.py", line 61, in render
+    return self.template.render(context)
+           ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "/Users/kunalsachintakke/Documents/personal/projects/sparksFinanceProject/SparksFinance/.sparkEnv/lib/python3.14/site-packages/django/template/base.py", line 175, in render
+    return self._render(context)
+           ~~~~~~~~~~~~^^^^^^^^^
+  File "/Users/kunalsachintakke/Documents/personal/projects/sparksFinanceProject/SparksFinance/.sparkEnv/lib/python3.14/site-packages/django/template/base.py", line 167, in _render
+    return self.nodelist.render(context)
+           ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "/Users/kunalsachintakke/Documents/personal/projects/sparksFinanceProject/SparksFinance/.sparkEnv/lib/python3.14/site-packages/django/template/base.py", line 1005, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "/Users/kunalsachintakke/Documents/personal/projects/sparksFinanceProject/SparksFinance/.sparkEnv/lib/python3.14/site-packages/django/template/base.py", line 966, in render_annotated
+    return self.render(context)
+           ~~~~~~~~~~~^^^^^^^^^
+  File "/Users/kunalsachintakke/Documents/personal/projects/sparksFinanceProject/SparksFinance/.sparkEnv/lib/python3.14/site-packages/django/template/loader_tags.py", line 157, in render
+    return compiled_parent._render(context)
+           ~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "/Users/kunalsachintakke/Documents/personal/projects/sparksFinanceProject/SparksFinance/.sparkEnv/lib/python3.14/site-packages/django/template/base.py", line 167, in _render
+    return self.nodelist.render(context)
+           ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "/Users/kunalsachintakke/Documents/personal/projects/sparksFinanceProject/SparksFinance/.sparkEnv/lib/python3.14/site-packages/django/template/base.py", line 1005, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "/Users/kunalsachintakke/Documents/personal/projects/sparksFinanceProject/SparksFinance/.sparkEnv/lib/python3.14/site-packages/django/template/base.py", line 966, in render_annotated
+    return self.render(context)
+           ~~~~~~~~~~~^^^^^^^^^
+  File "/Users/kunalsachintakke/Documents/personal/projects/sparksFinanceProject/SparksFinance/.sparkEnv/lib/python3.14/site-packages/django/template/loader_tags.py", line 157, in render
+    return compiled_parent._render(context)
+           ~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "/Users/kunalsachintakke/Documents/personal/projects/sparksFinanceProject/SparksFinance/.sparkEnv/lib/python3.14/site-packages/django/template/base.py", line 167, in _render
+    return self.nodelist.render(context)
+           ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "/Users/kunalsachintakke/Documents/personal/projects/sparksFinanceProject/SparksFinance/.sparkEnv/lib/python3.14/site-packages/django/template/base.py", line 1005, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "/Users/kunalsachintakke/Documents/personal/projects/sparksFinanceProject/SparksFinance/.sparkEnv/lib/python3.14/site-packages/django/template/base.py", line 966, in render_annotated
+    return self.render(context)
+           ~~~~~~~~~~~^^^^^^^^^
+  File "/Users/kunalsachintakke/Documents/personal/projects/sparksFinanceProject/SparksFinance/.sparkEnv/lib/python3.14/site-packages/django/template/loader_tags.py", line 63, in render
+    result = block.nodelist.render(context)
+  File "/Users/kunalsachintakke/Documents/personal/projects/sparksFinanceProject/SparksFinance/.sparkEnv/lib/python3.14/site-packages/django/template/base.py", line 1005, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "/Users/kunalsachintakke/Documents/personal/projects/sparksFinanceProject/SparksFinance/.sparkEnv/lib/python3.14/site-packages/django/template/base.py", line 966, in render_annotated
+    return self.render(context)
+           ~~~~~~~~~~~^^^^^^^^^
+  File "/Users/kunalsachintakke/Documents/personal/projects/sparksFinanceProject/SparksFinance/.sparkEnv/lib/python3.14/site-packages/django/template/loader_tags.py", line 63, in render
+    result = block.nodelist.render(context)
+  File "/Users/kunalsachintakke/Documents/personal/projects/sparksFinanceProject/SparksFinance/.sparkEnv/lib/python3.14/site-packages/django/template/base.py", line 1005, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "/Users/kunalsachintakke/Documents/personal/projects/sparksFinanceProject/SparksFinance/.sparkEnv/lib/python3.14/site-packages/django/template/base.py", line 966, in render_annotated
+    return self.render(context)
+           ~~~~~~~~~~~^^^^^^^^^
+  File "/Users/kunalsachintakke/Documents/personal/projects/sparksFinanceProject/SparksFinance/.sparkEnv/lib/python3.14/site-packages/django/template/loader_tags.py", line 63, in render
+    result = block.nodelist.render(context)
+  File "/Users/kunalsachintakke/Documents/personal/projects/sparksFinanceProject/SparksFinance/.sparkEnv/lib/python3.14/site-packages/django/template/base.py", line 1005, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "/Users/kunalsachintakke/Documents/personal/projects/sparksFinanceProject/SparksFinance/.sparkEnv/lib/python3.14/site-packages/django/template/base.py", line 966, in render_annotated
+    return self.render(context)
+           ~~~~~~~~~~~^^^^^^^^^
+  File "/Users/kunalsachintakke/Documents/personal/projects/sparksFinanceProject/SparksFinance/.sparkEnv/lib/python3.14/site-packages/django/contrib/admin/templatetags/base.py", line 45, in render
+    return super().render(context)
+           ~~~~~~~~~~~~~~^^^^^^^^^
+  File "/Users/kunalsachintakke/Documents/personal/projects/sparksFinanceProject/SparksFinance/.sparkEnv/lib/python3.14/site-packages/django/template/library.py", line 271, in render
+    new_context = context.new(_dict)
+  File "/Users/kunalsachintakke/Documents/personal/projects/sparksFinanceProject/SparksFinance/.sparkEnv/lib/python3.14/site-packages/django/template/context.py", line 265, in new
+    new_context = super().new(values)
+  File "/Users/kunalsachintakke/Documents/personal/projects/sparksFinanceProject/SparksFinance/.sparkEnv/lib/python3.14/site-packages/django/template/context.py", line 110, in new
+    new_context = copy(self)
+  File "/Library/Frameworks/Python.framework/Versions/3.14/lib/python3.14/copy.py", line 82, in copy
+    return copier(x)
+  File "/Users/kunalsachintakke/Documents/personal/projects/sparksFinanceProject/SparksFinance/.sparkEnv/lib/python3.14/site-packages/django/template/context.py", line 158, in __copy__
+    duplicate = super().__copy__()
+  File "/Users/kunalsachintakke/Documents/personal/projects/sparksFinanceProject/SparksFinance/.sparkEnv/lib/python3.14/site-packages/django/template/context.py", line 39, in __copy__
+    duplicate.dicts = self.dicts[:]
+    ^^^^^^^^^^^^^^^
+AttributeError: 'super' object has no attribute 'dicts' and no __dict__ for setting new attributes
+WARNING 2026-01-29 01:03:35,181 log 20878 6209286144 Not Found: /finance/
+ERROR 2026-01-29 01:03:40,139 log 20878 6209286144 Internal Server Error: /admin/authtoken/tokenproxy/add/
+Traceback (most recent call last):
+  File "/Users/kunalsachintakke/Documents/personal/projects/sparksFinanceProject/SparksFinance/.sparkEnv/lib/python3.14/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/Users/kunalsachintakke/Documents/personal/projects/sparksFinanceProject/SparksFinance/.sparkEnv/lib/python3.14/site-packages/django/core/handlers/base.py", line 220, in _get_response
+    response = response.render()
+  File "/Users/kunalsachintakke/Documents/personal/projects/sparksFinanceProject/SparksFinance/.sparkEnv/lib/python3.14/site-packages/django/template/response.py", line 114, in render
+    self.content = self.rendered_content
+                   ^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/kunalsachintakke/Documents/personal/projects/sparksFinanceProject/SparksFinance/.sparkEnv/lib/python3.14/site-packages/django/template/response.py", line 92, in rendered_content
+    return template.render(context, self._request)
+           ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/kunalsachintakke/Documents/personal/projects/sparksFinanceProject/SparksFinance/.sparkEnv/lib/python3.14/site-packages/django/template/backends/django.py", line 61, in render
+    return self.template.render(context)
+           ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "/Users/kunalsachintakke/Documents/personal/projects/sparksFinanceProject/SparksFinance/.sparkEnv/lib/python3.14/site-packages/django/template/base.py", line 175, in render
+    return self._render(context)
+           ~~~~~~~~~~~~^^^^^^^^^
+  File "/Users/kunalsachintakke/Documents/personal/projects/sparksFinanceProject/SparksFinance/.sparkEnv/lib/python3.14/site-packages/django/template/base.py", line 167, in _render
+    return self.nodelist.render(context)
+           ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "/Users/kunalsachintakke/Documents/personal/projects/sparksFinanceProject/SparksFinance/.sparkEnv/lib/python3.14/site-packages/django/template/base.py", line 1005, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "/Users/kunalsachintakke/Documents/personal/projects/sparksFinanceProject/SparksFinance/.sparkEnv/lib/python3.14/site-packages/django/template/base.py", line 966, in render_annotated
+    return self.render(context)
+           ~~~~~~~~~~~^^^^^^^^^
+  File "/Users/kunalsachintakke/Documents/personal/projects/sparksFinanceProject/SparksFinance/.sparkEnv/lib/python3.14/site-packages/django/template/loader_tags.py", line 157, in render
+    return compiled_parent._render(context)
+           ~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "/Users/kunalsachintakke/Documents/personal/projects/sparksFinanceProject/SparksFinance/.sparkEnv/lib/python3.14/site-packages/django/template/base.py", line 167, in _render
+    return self.nodelist.render(context)
+           ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "/Users/kunalsachintakke/Documents/personal/projects/sparksFinanceProject/SparksFinance/.sparkEnv/lib/python3.14/site-packages/django/template/base.py", line 1005, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "/Users/kunalsachintakke/Documents/personal/projects/sparksFinanceProject/SparksFinance/.sparkEnv/lib/python3.14/site-packages/django/template/base.py", line 966, in render_annotated
+    return self.render(context)
+           ~~~~~~~~~~~^^^^^^^^^
+  File "/Users/kunalsachintakke/Documents/personal/projects/sparksFinanceProject/SparksFinance/.sparkEnv/lib/python3.14/site-packages/django/template/loader_tags.py", line 157, in render
+    return compiled_parent._render(context)
+           ~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "/Users/kunalsachintakke/Documents/personal/projects/sparksFinanceProject/SparksFinance/.sparkEnv/lib/python3.14/site-packages/django/template/base.py", line 167, in _render
+    return self.nodelist.render(context)
+           ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "/Users/kunalsachintakke/Documents/personal/projects/sparksFinanceProject/SparksFinance/.sparkEnv/lib/python3.14/site-packages/django/template/base.py", line 1005, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "/Users/kunalsachintakke/Documents/personal/projects/sparksFinanceProject/SparksFinance/.sparkEnv/lib/python3.14/site-packages/django/template/base.py", line 966, in render_annotated
+    return self.render(context)
+           ~~~~~~~~~~~^^^^^^^^^
+  File "/Users/kunalsachintakke/Documents/personal/projects/sparksFinanceProject/SparksFinance/.sparkEnv/lib/python3.14/site-packages/django/template/loader_tags.py", line 63, in render
+    result = block.nodelist.render(context)
+  File "/Users/kunalsachintakke/Documents/personal/projects/sparksFinanceProject/SparksFinance/.sparkEnv/lib/python3.14/site-packages/django/template/base.py", line 1005, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "/Users/kunalsachintakke/Documents/personal/projects/sparksFinanceProject/SparksFinance/.sparkEnv/lib/python3.14/site-packages/django/template/base.py", line 966, in render_annotated
+    return self.render(context)
+           ~~~~~~~~~~~^^^^^^^^^
+  File "/Users/kunalsachintakke/Documents/personal/projects/sparksFinanceProject/SparksFinance/.sparkEnv/lib/python3.14/site-packages/django/template/loader_tags.py", line 63, in render
+    result = block.nodelist.render(context)
+  File "/Users/kunalsachintakke/Documents/personal/projects/sparksFinanceProject/SparksFinance/.sparkEnv/lib/python3.14/site-packages/django/template/base.py", line 1005, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "/Users/kunalsachintakke/Documents/personal/projects/sparksFinanceProject/SparksFinance/.sparkEnv/lib/python3.14/site-packages/django/template/base.py", line 966, in render_annotated
+    return self.render(context)
+           ~~~~~~~~~~~^^^^^^^^^
+  File "/Users/kunalsachintakke/Documents/personal/projects/sparksFinanceProject/SparksFinance/.sparkEnv/lib/python3.14/site-packages/django/contrib/admin/templatetags/base.py", line 45, in render
+    return super().render(context)
+           ~~~~~~~~~~~~~~^^^^^^^^^
+  File "/Users/kunalsachintakke/Documents/personal/projects/sparksFinanceProject/SparksFinance/.sparkEnv/lib/python3.14/site-packages/django/template/library.py", line 271, in render
+    new_context = context.new(_dict)
+  File "/Users/kunalsachintakke/Documents/personal/projects/sparksFinanceProject/SparksFinance/.sparkEnv/lib/python3.14/site-packages/django/template/context.py", line 265, in new
+    new_context = super().new(values)
+  File "/Users/kunalsachintakke/Documents/personal/projects/sparksFinanceProject/SparksFinance/.sparkEnv/lib/python3.14/site-packages/django/template/context.py", line 110, in new
+    new_context = copy(self)
+  File "/Library/Frameworks/Python.framework/Versions/3.14/lib/python3.14/copy.py", line 82, in copy
+    return copier(x)
+  File "/Users/kunalsachintakke/Documents/personal/projects/sparksFinanceProject/SparksFinance/.sparkEnv/lib/python3.14/site-packages/django/template/context.py", line 158, in __copy__
+    duplicate = super().__copy__()
+  File "/Users/kunalsachintakke/Documents/personal/projects/sparksFinanceProject/SparksFinance/.sparkEnv/lib/python3.14/site-packages/django/template/context.py", line 39, in __copy__
+    duplicate.dicts = self.dicts[:]
+    ^^^^^^^^^^^^^^^
+AttributeError: 'super' object has no attribute 'dicts' and no __dict__ for setting new attributes
+INFO 2026-01-29 01:20:40,681 autoreload 25643 8756568640 Watching for file changes with StatReloader
+WARNING 2026-01-29 01:20:47,186 log 25643 6285717504 Not Found: /favicon.ico
+WARNING 2026-01-29 01:21:04,799 log 25643 6285717504 Not Found: /finance/
+WARNING 2026-01-29 01:21:04,976 log 25643 6285717504 Not Found: /finance/
+WARNING 2026-01-29 01:22:15,755 log 25643 6285717504 Not Found: /finance/
+WARNING 2026-01-29 01:22:15,940 log 25643 6285717504 Not Found: /finance/
+INFO 2026-01-29 01:36:50,963 autoreload 25643 8756568640 /Users/kunalsachintakke/Documents/personal/projects/sparksFinanceProject/SparksFinance/finance/urls.py changed, reloading.
+INFO 2026-01-29 01:36:51,253 autoreload 25918 8756568640 Watching for file changes with StatReloader
+INFO 2026-01-29 01:36:57,465 autoreload 25918 8756568640 /Users/kunalsachintakke/Documents/personal/projects/sparksFinanceProject/SparksFinance/finance/urls.py changed, reloading.
+INFO 2026-01-29 01:36:57,659 autoreload 25936 8756568640 Watching for file changes with StatReloader
+INFO 2026-01-29 01:37:11,038 autoreload 25936 8756568640 /Users/kunalsachintakke/Documents/personal/projects/sparksFinanceProject/SparksFinance/SparksFinance/urls.py changed, reloading.
+INFO 2026-01-29 01:37:11,219 autoreload 25945 8756568640 Watching for file changes with StatReloader
+INFO 2026-01-29 01:37:30,793 autoreload 25945 8756568640 /Users/kunalsachintakke/Documents/personal/projects/sparksFinanceProject/SparksFinance/SparksFinance/urls.py changed, reloading.
+INFO 2026-01-29 01:37:30,949 autoreload 25960 8756568640 Watching for file changes with StatReloader
+INFO 2026-01-29 01:37:34,074 autoreload 25960 8756568640 /Users/kunalsachintakke/Documents/personal/projects/sparksFinanceProject/SparksFinance/SparksFinance/urls.py changed, reloading.
+INFO 2026-01-29 01:37:34,232 autoreload 25969 8756568640 Watching for file changes with StatReloader
+ERROR 2026-01-29 01:37:45,062 log 25969 6167539712 Internal Server Error: /finance/
+Traceback (most recent call last):
+  File "/Users/kunalsachintakke/Documents/personal/projects/sparksFinanceProject/SparksFinance/.sparksEnv/lib/python3.12/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/kunalsachintakke/Documents/personal/projects/sparksFinanceProject/SparksFinance/.sparksEnv/lib/python3.12/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/homebrew/Cellar/python@3.12/3.12.12_1/Frameworks/Python.framework/Versions/3.12/lib/python3.12/contextlib.py", line 81, in inner
+    return func(*args, **kwds)
+           ^^^^^^^^^^^^^^^^^^^
+  File "/Users/kunalsachintakke/Documents/personal/projects/sparksFinanceProject/SparksFinance/finance/views.py", line 133, in index
+    return render(request, 'finance/index.html')
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/kunalsachintakke/Documents/personal/projects/sparksFinanceProject/SparksFinance/.sparksEnv/lib/python3.12/site-packages/django/shortcuts.py", line 24, in render
+    content = loader.render_to_string(template_name, context, request, using=using)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/kunalsachintakke/Documents/personal/projects/sparksFinanceProject/SparksFinance/.sparksEnv/lib/python3.12/site-packages/django/template/loader.py", line 61, in render_to_string
+    template = get_template(template_name, using=using)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/kunalsachintakke/Documents/personal/projects/sparksFinanceProject/SparksFinance/.sparksEnv/lib/python3.12/site-packages/django/template/loader.py", line 19, in get_template
+    raise TemplateDoesNotExist(template_name, chain=chain)
+django.template.exceptions.TemplateDoesNotExist: finance/index.html
+WARNING 2026-01-29 01:37:45,144 log 25969 6167539712 Not Found: /favicon.ico
+INFO 2026-01-29 01:38:06,293 autoreload 26121 8756568640 Watching for file changes with StatReloader
+ERROR 2026-01-29 01:38:10,938 log 26121 6128168960 Internal Server Error: /finance/
+Traceback (most recent call last):
+  File "/Users/kunalsachintakke/Documents/personal/projects/sparksFinanceProject/SparksFinance/.sparksEnv/lib/python3.12/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/kunalsachintakke/Documents/personal/projects/sparksFinanceProject/SparksFinance/.sparksEnv/lib/python3.12/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/homebrew/Cellar/python@3.12/3.12.12_1/Frameworks/Python.framework/Versions/3.12/lib/python3.12/contextlib.py", line 81, in inner
+    return func(*args, **kwds)
+           ^^^^^^^^^^^^^^^^^^^
+  File "/Users/kunalsachintakke/Documents/personal/projects/sparksFinanceProject/SparksFinance/finance/views.py", line 133, in index
+    return render(request, 'finance/index.html')
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/kunalsachintakke/Documents/personal/projects/sparksFinanceProject/SparksFinance/.sparksEnv/lib/python3.12/site-packages/django/shortcuts.py", line 24, in render
+    content = loader.render_to_string(template_name, context, request, using=using)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/kunalsachintakke/Documents/personal/projects/sparksFinanceProject/SparksFinance/.sparksEnv/lib/python3.12/site-packages/django/template/loader.py", line 61, in render_to_string
+    template = get_template(template_name, using=using)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/kunalsachintakke/Documents/personal/projects/sparksFinanceProject/SparksFinance/.sparksEnv/lib/python3.12/site-packages/django/template/loader.py", line 19, in get_template
+    raise TemplateDoesNotExist(template_name, chain=chain)
+django.template.exceptions.TemplateDoesNotExist: finance/index.html
+WARNING 2026-01-29 01:38:10,983 log 26121 6128168960 Not Found: /favicon.ico
+ERROR 2026-01-29 01:38:13,447 log 26121 6128168960 Internal Server Error: /finance/
+Traceback (most recent call last):
+  File "/Users/kunalsachintakke/Documents/personal/projects/sparksFinanceProject/SparksFinance/.sparksEnv/lib/python3.12/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/kunalsachintakke/Documents/personal/projects/sparksFinanceProject/SparksFinance/.sparksEnv/lib/python3.12/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/homebrew/Cellar/python@3.12/3.12.12_1/Frameworks/Python.framework/Versions/3.12/lib/python3.12/contextlib.py", line 81, in inner
+    return func(*args, **kwds)
+           ^^^^^^^^^^^^^^^^^^^
+  File "/Users/kunalsachintakke/Documents/personal/projects/sparksFinanceProject/SparksFinance/finance/views.py", line 133, in index
+    return render(request, 'finance/index.html')
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/kunalsachintakke/Documents/personal/projects/sparksFinanceProject/SparksFinance/.sparksEnv/lib/python3.12/site-packages/django/shortcuts.py", line 24, in render
+    content = loader.render_to_string(template_name, context, request, using=using)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/kunalsachintakke/Documents/personal/projects/sparksFinanceProject/SparksFinance/.sparksEnv/lib/python3.12/site-packages/django/template/loader.py", line 61, in render_to_string
+    template = get_template(template_name, using=using)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/kunalsachintakke/Documents/personal/projects/sparksFinanceProject/SparksFinance/.sparksEnv/lib/python3.12/site-packages/django/template/loader.py", line 19, in get_template
+    raise TemplateDoesNotExist(template_name, chain=chain)
+django.template.exceptions.TemplateDoesNotExist: finance/index.html
+ERROR 2026-01-29 01:38:14,208 log 26121 6128168960 Internal Server Error: /finance/
+Traceback (most recent call last):
+  File "/Users/kunalsachintakke/Documents/personal/projects/sparksFinanceProject/SparksFinance/.sparksEnv/lib/python3.12/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/kunalsachintakke/Documents/personal/projects/sparksFinanceProject/SparksFinance/.sparksEnv/lib/python3.12/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/homebrew/Cellar/python@3.12/3.12.12_1/Frameworks/Python.framework/Versions/3.12/lib/python3.12/contextlib.py", line 81, in inner
+    return func(*args, **kwds)
+           ^^^^^^^^^^^^^^^^^^^
+  File "/Users/kunalsachintakke/Documents/personal/projects/sparksFinanceProject/SparksFinance/finance/views.py", line 133, in index
+    return render(request, 'finance/index.html')
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/kunalsachintakke/Documents/personal/projects/sparksFinanceProject/SparksFinance/.sparksEnv/lib/python3.12/site-packages/django/shortcuts.py", line 24, in render
+    content = loader.render_to_string(template_name, context, request, using=using)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/kunalsachintakke/Documents/personal/projects/sparksFinanceProject/SparksFinance/.sparksEnv/lib/python3.12/site-packages/django/template/loader.py", line 61, in render_to_string
+    template = get_template(template_name, using=using)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/kunalsachintakke/Documents/personal/projects/sparksFinanceProject/SparksFinance/.sparksEnv/lib/python3.12/site-packages/django/template/loader.py", line 19, in get_template
+    raise TemplateDoesNotExist(template_name, chain=chain)
+django.template.exceptions.TemplateDoesNotExist: finance/index.html
+INFO 2026-01-29 01:59:05,951 autoreload 26719 8756568640 Watching for file changes with StatReloader
+ERROR 2026-01-29 01:59:11,738 log 26719 6131478528 Internal Server Error: /finance/
+Traceback (most recent call last):
+  File "/Users/kunalsachintakke/Documents/personal/projects/sparksFinanceProject/SparksFinance/.sparksEnv/lib/python3.12/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/kunalsachintakke/Documents/personal/projects/sparksFinanceProject/SparksFinance/.sparksEnv/lib/python3.12/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/homebrew/Cellar/python@3.12/3.12.12_1/Frameworks/Python.framework/Versions/3.12/lib/python3.12/contextlib.py", line 81, in inner
+    return func(*args, **kwds)
+           ^^^^^^^^^^^^^^^^^^^
+  File "/Users/kunalsachintakke/Documents/personal/projects/sparksFinanceProject/SparksFinance/finance/views.py", line 133, in index
+    return render(request, 'finance/index.html')
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/kunalsachintakke/Documents/personal/projects/sparksFinanceProject/SparksFinance/.sparksEnv/lib/python3.12/site-packages/django/shortcuts.py", line 24, in render
+    content = loader.render_to_string(template_name, context, request, using=using)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/kunalsachintakke/Documents/personal/projects/sparksFinanceProject/SparksFinance/.sparksEnv/lib/python3.12/site-packages/django/template/loader.py", line 62, in render_to_string
+    return template.render(context, request)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/kunalsachintakke/Documents/personal/projects/sparksFinanceProject/SparksFinance/.sparksEnv/lib/python3.12/site-packages/django/template/backends/django.py", line 61, in render
+    return self.template.render(context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/kunalsachintakke/Documents/personal/projects/sparksFinanceProject/SparksFinance/.sparksEnv/lib/python3.12/site-packages/django/template/base.py", line 175, in render
+    return self._render(context)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/kunalsachintakke/Documents/personal/projects/sparksFinanceProject/SparksFinance/.sparksEnv/lib/python3.12/site-packages/django/template/base.py", line 167, in _render
+    return self.nodelist.render(context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/kunalsachintakke/Documents/personal/projects/sparksFinanceProject/SparksFinance/.sparksEnv/lib/python3.12/site-packages/django/template/base.py", line 1005, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/kunalsachintakke/Documents/personal/projects/sparksFinanceProject/SparksFinance/.sparksEnv/lib/python3.12/site-packages/django/template/base.py", line 966, in render_annotated
+    return self.render(context)
+           ^^^^^^^^^^^^^^^^^^^^
+  File "/Users/kunalsachintakke/Documents/personal/projects/sparksFinanceProject/SparksFinance/.sparksEnv/lib/python3.12/site-packages/django/template/loader_tags.py", line 157, in render
+    return compiled_parent._render(context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/kunalsachintakke/Documents/personal/projects/sparksFinanceProject/SparksFinance/.sparksEnv/lib/python3.12/site-packages/django/template/base.py", line 167, in _render
+    return self.nodelist.render(context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/kunalsachintakke/Documents/personal/projects/sparksFinanceProject/SparksFinance/.sparksEnv/lib/python3.12/site-packages/django/template/base.py", line 1005, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/kunalsachintakke/Documents/personal/projects/sparksFinanceProject/SparksFinance/.sparksEnv/lib/python3.12/site-packages/django/template/base.py", line 966, in render_annotated
+    return self.render(context)
+           ^^^^^^^^^^^^^^^^^^^^
+  File "/Users/kunalsachintakke/Documents/personal/projects/sparksFinanceProject/SparksFinance/.sparksEnv/lib/python3.12/site-packages/django/template/defaulttags.py", line 471, in render
+    url = reverse(view_name, args=args, kwargs=kwargs, current_app=current_app)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/kunalsachintakke/Documents/personal/projects/sparksFinanceProject/SparksFinance/.sparksEnv/lib/python3.12/site-packages/django/urls/base.py", line 88, in reverse
+    return resolver._reverse_with_prefix(view, prefix, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/kunalsachintakke/Documents/personal/projects/sparksFinanceProject/SparksFinance/.sparksEnv/lib/python3.12/site-packages/django/urls/resolvers.py", line 828, in _reverse_with_prefix
+    raise NoReverseMatch(msg)
+django.urls.exceptions.NoReverseMatch: Reverse for 'index' not found. 'index' is not a valid view function or pattern name.
+WARNING 2026-01-29 01:59:11,824 log 26719 6131478528 Not Found: /favicon.ico
+ERROR 2026-01-29 01:59:15,614 log 26719 6131478528 Internal Server Error: /finance/
+Traceback (most recent call last):
+  File "/Users/kunalsachintakke/Documents/personal/projects/sparksFinanceProject/SparksFinance/.sparksEnv/lib/python3.12/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/kunalsachintakke/Documents/personal/projects/sparksFinanceProject/SparksFinance/.sparksEnv/lib/python3.12/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/homebrew/Cellar/python@3.12/3.12.12_1/Frameworks/Python.framework/Versions/3.12/lib/python3.12/contextlib.py", line 81, in inner
+    return func(*args, **kwds)
+           ^^^^^^^^^^^^^^^^^^^
+  File "/Users/kunalsachintakke/Documents/personal/projects/sparksFinanceProject/SparksFinance/finance/views.py", line 133, in index
+    return render(request, 'finance/index.html')
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/kunalsachintakke/Documents/personal/projects/sparksFinanceProject/SparksFinance/.sparksEnv/lib/python3.12/site-packages/django/shortcuts.py", line 24, in render
+    content = loader.render_to_string(template_name, context, request, using=using)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/kunalsachintakke/Documents/personal/projects/sparksFinanceProject/SparksFinance/.sparksEnv/lib/python3.12/site-packages/django/template/loader.py", line 62, in render_to_string
+    return template.render(context, request)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/kunalsachintakke/Documents/personal/projects/sparksFinanceProject/SparksFinance/.sparksEnv/lib/python3.12/site-packages/django/template/backends/django.py", line 61, in render
+    return self.template.render(context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/kunalsachintakke/Documents/personal/projects/sparksFinanceProject/SparksFinance/.sparksEnv/lib/python3.12/site-packages/django/template/base.py", line 175, in render
+    return self._render(context)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/kunalsachintakke/Documents/personal/projects/sparksFinanceProject/SparksFinance/.sparksEnv/lib/python3.12/site-packages/django/template/base.py", line 167, in _render
+    return self.nodelist.render(context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/kunalsachintakke/Documents/personal/projects/sparksFinanceProject/SparksFinance/.sparksEnv/lib/python3.12/site-packages/django/template/base.py", line 1005, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/kunalsachintakke/Documents/personal/projects/sparksFinanceProject/SparksFinance/.sparksEnv/lib/python3.12/site-packages/django/template/base.py", line 966, in render_annotated
+    return self.render(context)
+           ^^^^^^^^^^^^^^^^^^^^
+  File "/Users/kunalsachintakke/Documents/personal/projects/sparksFinanceProject/SparksFinance/.sparksEnv/lib/python3.12/site-packages/django/template/loader_tags.py", line 157, in render
+    return compiled_parent._render(context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/kunalsachintakke/Documents/personal/projects/sparksFinanceProject/SparksFinance/.sparksEnv/lib/python3.12/site-packages/django/template/base.py", line 167, in _render
+    return self.nodelist.render(context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/kunalsachintakke/Documents/personal/projects/sparksFinanceProject/SparksFinance/.sparksEnv/lib/python3.12/site-packages/django/template/base.py", line 1005, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/kunalsachintakke/Documents/personal/projects/sparksFinanceProject/SparksFinance/.sparksEnv/lib/python3.12/site-packages/django/template/base.py", line 966, in render_annotated
+    return self.render(context)
+           ^^^^^^^^^^^^^^^^^^^^
+  File "/Users/kunalsachintakke/Documents/personal/projects/sparksFinanceProject/SparksFinance/.sparksEnv/lib/python3.12/site-packages/django/template/defaulttags.py", line 471, in render
+    url = reverse(view_name, args=args, kwargs=kwargs, current_app=current_app)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/kunalsachintakke/Documents/personal/projects/sparksFinanceProject/SparksFinance/.sparksEnv/lib/python3.12/site-packages/django/urls/base.py", line 88, in reverse
+    return resolver._reverse_with_prefix(view, prefix, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/kunalsachintakke/Documents/personal/projects/sparksFinanceProject/SparksFinance/.sparksEnv/lib/python3.12/site-packages/django/urls/resolvers.py", line 828, in _reverse_with_prefix
+    raise NoReverseMatch(msg)
+django.urls.exceptions.NoReverseMatch: Reverse for 'index' not found. 'index' is not a valid view function or pattern name.
+ERROR 2026-01-29 01:59:15,899 log 26719 6131478528 Internal Server Error: /finance/
+Traceback (most recent call last):
+  File "/Users/kunalsachintakke/Documents/personal/projects/sparksFinanceProject/SparksFinance/.sparksEnv/lib/python3.12/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/kunalsachintakke/Documents/personal/projects/sparksFinanceProject/SparksFinance/.sparksEnv/lib/python3.12/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/homebrew/Cellar/python@3.12/3.12.12_1/Frameworks/Python.framework/Versions/3.12/lib/python3.12/contextlib.py", line 81, in inner
+    return func(*args, **kwds)
+           ^^^^^^^^^^^^^^^^^^^
+  File "/Users/kunalsachintakke/Documents/personal/projects/sparksFinanceProject/SparksFinance/finance/views.py", line 133, in index
+    return render(request, 'finance/index.html')
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/kunalsachintakke/Documents/personal/projects/sparksFinanceProject/SparksFinance/.sparksEnv/lib/python3.12/site-packages/django/shortcuts.py", line 24, in render
+    content = loader.render_to_string(template_name, context, request, using=using)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/kunalsachintakke/Documents/personal/projects/sparksFinanceProject/SparksFinance/.sparksEnv/lib/python3.12/site-packages/django/template/loader.py", line 62, in render_to_string
+    return template.render(context, request)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/kunalsachintakke/Documents/personal/projects/sparksFinanceProject/SparksFinance/.sparksEnv/lib/python3.12/site-packages/django/template/backends/django.py", line 61, in render
+    return self.template.render(context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/kunalsachintakke/Documents/personal/projects/sparksFinanceProject/SparksFinance/.sparksEnv/lib/python3.12/site-packages/django/template/base.py", line 175, in render
+    return self._render(context)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/kunalsachintakke/Documents/personal/projects/sparksFinanceProject/SparksFinance/.sparksEnv/lib/python3.12/site-packages/django/template/base.py", line 167, in _render
+    return self.nodelist.render(context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/kunalsachintakke/Documents/personal/projects/sparksFinanceProject/SparksFinance/.sparksEnv/lib/python3.12/site-packages/django/template/base.py", line 1005, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/kunalsachintakke/Documents/personal/projects/sparksFinanceProject/SparksFinance/.sparksEnv/lib/python3.12/site-packages/django/template/base.py", line 966, in render_annotated
+    return self.render(context)
+           ^^^^^^^^^^^^^^^^^^^^
+  File "/Users/kunalsachintakke/Documents/personal/projects/sparksFinanceProject/SparksFinance/.sparksEnv/lib/python3.12/site-packages/django/template/loader_tags.py", line 157, in render
+    return compiled_parent._render(context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/kunalsachintakke/Documents/personal/projects/sparksFinanceProject/SparksFinance/.sparksEnv/lib/python3.12/site-packages/django/template/base.py", line 167, in _render
+    return self.nodelist.render(context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/kunalsachintakke/Documents/personal/projects/sparksFinanceProject/SparksFinance/.sparksEnv/lib/python3.12/site-packages/django/template/base.py", line 1005, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/kunalsachintakke/Documents/personal/projects/sparksFinanceProject/SparksFinance/.sparksEnv/lib/python3.12/site-packages/django/template/base.py", line 966, in render_annotated
+    return self.render(context)
+           ^^^^^^^^^^^^^^^^^^^^
+  File "/Users/kunalsachintakke/Documents/personal/projects/sparksFinanceProject/SparksFinance/.sparksEnv/lib/python3.12/site-packages/django/template/defaulttags.py", line 471, in render
+    url = reverse(view_name, args=args, kwargs=kwargs, current_app=current_app)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/kunalsachintakke/Documents/personal/projects/sparksFinanceProject/SparksFinance/.sparksEnv/lib/python3.12/site-packages/django/urls/base.py", line 88, in reverse
+    return resolver._reverse_with_prefix(view, prefix, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/kunalsachintakke/Documents/personal/projects/sparksFinanceProject/SparksFinance/.sparksEnv/lib/python3.12/site-packages/django/urls/resolvers.py", line 828, in _reverse_with_prefix
+    raise NoReverseMatch(msg)
+django.urls.exceptions.NoReverseMatch: Reverse for 'index' not found. 'index' is not a valid view function or pattern name.
+INFO 2026-01-29 02:01:31,735 autoreload 26719 8756568640 /Users/kunalsachintakke/Documents/personal/projects/sparksFinanceProject/SparksFinance/finance/urls.py changed, reloading.
+INFO 2026-01-29 02:01:32,059 autoreload 26777 8756568640 Watching for file changes with StatReloader
+ERROR 2026-01-29 02:02:12,016 log 26777 6240825344 Internal Server Error: /admin/logout/
+Traceback (most recent call last):
+  File "/Users/kunalsachintakke/Documents/personal/projects/sparksFinanceProject/SparksFinance/.sparksEnv/lib/python3.12/site-packages/django/urls/base.py", line 71, in reverse
+    extra, resolver = resolver.namespace_dict[ns]
+                      ~~~~~~~~~~~~~~~~~~~~~~~^^^^
+KeyError: 'finance'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/Users/kunalsachintakke/Documents/personal/projects/sparksFinanceProject/SparksFinance/.sparksEnv/lib/python3.12/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/kunalsachintakke/Documents/personal/projects/sparksFinanceProject/SparksFinance/.sparksEnv/lib/python3.12/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/homebrew/Cellar/python@3.12/3.12.12_1/Frameworks/Python.framework/Versions/3.12/lib/python3.12/contextlib.py", line 81, in inner
+    return func(*args, **kwds)
+           ^^^^^^^^^^^^^^^^^^^
+  File "/Users/kunalsachintakke/Documents/personal/projects/sparksFinanceProject/SparksFinance/.sparksEnv/lib/python3.12/site-packages/django/contrib/admin/sites.py", line 261, in wrapper
+    return self.admin_view(view, cacheable)(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/kunalsachintakke/Documents/personal/projects/sparksFinanceProject/SparksFinance/.sparksEnv/lib/python3.12/site-packages/django/utils/decorators.py", line 134, in _wrapper_view
+    response = view_func(request, *args, **kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/kunalsachintakke/Documents/personal/projects/sparksFinanceProject/SparksFinance/.sparksEnv/lib/python3.12/site-packages/django/views/decorators/cache.py", line 62, in _wrapper_view_func
+    response = view_func(request, *args, **kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/kunalsachintakke/Documents/personal/projects/sparksFinanceProject/SparksFinance/.sparksEnv/lib/python3.12/site-packages/django/contrib/admin/sites.py", line 242, in inner
+    return view(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/kunalsachintakke/Documents/personal/projects/sparksFinanceProject/SparksFinance/.sparksEnv/lib/python3.12/site-packages/django/contrib/admin/sites.py", line 403, in logout
+    return LogoutView.as_view(**defaults)(request)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/kunalsachintakke/Documents/personal/projects/sparksFinanceProject/SparksFinance/.sparksEnv/lib/python3.12/site-packages/django/views/generic/base.py", line 104, in view
+    return self.dispatch(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/kunalsachintakke/Documents/personal/projects/sparksFinanceProject/SparksFinance/.sparksEnv/lib/python3.12/site-packages/django/utils/decorators.py", line 46, in _wrapper
+    return bound_method(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/kunalsachintakke/Documents/personal/projects/sparksFinanceProject/SparksFinance/.sparksEnv/lib/python3.12/site-packages/django/views/decorators/cache.py", line 62, in _wrapper_view_func
+    response = view_func(request, *args, **kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/kunalsachintakke/Documents/personal/projects/sparksFinanceProject/SparksFinance/.sparksEnv/lib/python3.12/site-packages/django/contrib/auth/views.py", line 147, in dispatch
+    return super().dispatch(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/kunalsachintakke/Documents/personal/projects/sparksFinanceProject/SparksFinance/.sparksEnv/lib/python3.12/site-packages/django/views/generic/base.py", line 143, in dispatch
+    return handler(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/kunalsachintakke/Documents/personal/projects/sparksFinanceProject/SparksFinance/.sparksEnv/lib/python3.12/site-packages/django/utils/decorators.py", line 46, in _wrapper
+    return bound_method(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/kunalsachintakke/Documents/personal/projects/sparksFinanceProject/SparksFinance/.sparksEnv/lib/python3.12/site-packages/django/utils/decorators.py", line 134, in _wrapper_view
+    response = view_func(request, *args, **kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/kunalsachintakke/Documents/personal/projects/sparksFinanceProject/SparksFinance/.sparksEnv/lib/python3.12/site-packages/django/contrib/auth/views.py", line 153, in post
+    redirect_to = self.get_success_url()
+                  ^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/kunalsachintakke/Documents/personal/projects/sparksFinanceProject/SparksFinance/.sparksEnv/lib/python3.12/site-packages/django/contrib/auth/views.py", line 43, in get_success_url
+    return self.get_redirect_url() or self.get_default_redirect_url()
+                                      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/kunalsachintakke/Documents/personal/projects/sparksFinanceProject/SparksFinance/.sparksEnv/lib/python3.12/site-packages/django/contrib/auth/views.py", line 167, in get_default_redirect_url
+    return resolve_url(settings.LOGOUT_REDIRECT_URL)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/kunalsachintakke/Documents/personal/projects/sparksFinanceProject/SparksFinance/.sparksEnv/lib/python3.12/site-packages/django/shortcuts.py", line 145, in resolve_url
+    return reverse(to, args=args, kwargs=kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/kunalsachintakke/Documents/personal/projects/sparksFinanceProject/SparksFinance/.sparksEnv/lib/python3.12/site-packages/django/urls/base.py", line 82, in reverse
+    raise NoReverseMatch("%s is not a registered namespace" % key)
+django.urls.exceptions.NoReverseMatch: 'finance' is not a registered namespace
+INFO 2026-01-29 02:06:47,251 autoreload 26777 8756568640 /Users/kunalsachintakke/Documents/personal/projects/sparksFinanceProject/SparksFinance/finance/urls.py changed, reloading.
+INFO 2026-01-29 02:06:47,576 autoreload 27040 8756568640 Watching for file changes with StatReloader
+WARNING 2026-01-29 02:06:50,634 log 27040 6163656704 Not Found: /favicon.ico

@@ -1,0 +1,367 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>{% block title %}SparksFinance{% endblock %}</title>
+    
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- Font Awesome for icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            color: #333;
+        }
+        
+        /* Navbar Styles */
+        .navbar {
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            box-shadow: 0 2px 20px rgba(0,0,0,0.1);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+        
+        .nav-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1rem 2rem;
+        }
+        
+        .nav-logo {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: #667eea;
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+        
+        .nav-logo i {
+            font-size: 1.8rem;
+        }
+        
+        .nav-menu {
+            display: flex;
+            list-style: none;
+            gap: 2rem;
+            align-items: center;
+        }
+        
+        .nav-link {
+            color: #555;
+            text-decoration: none;
+            font-weight: 500;
+            transition: all 0.3s ease;
+            padding: 0.5rem 1rem;
+            border-radius: 8px;
+        }
+        
+        .nav-link:hover {
+            color: #667eea;
+            background: rgba(102, 126, 234, 0.1);
+        }
+        
+        .nav-link.btn-primary {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 0.6rem 1.5rem;
+        }
+        
+        .nav-link.btn-primary:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(102, 126, 234, 0.4);
+        }
+        
+        .nav-link.btn-secondary {
+            border: 2px solid #667eea;
+            color: #667eea;
+        }
+        
+        .nav-link.btn-secondary:hover {
+            background: #667eea;
+            color: white;
+        }
+        
+        /* Mobile Menu Toggle */
+        .mobile-toggle {
+            display: none;
+            font-size: 1.5rem;
+            cursor: pointer;
+            color: #667eea;
+        }
+        
+        /* Content Area */
+        .content {
+            min-height: calc(100vh - 200px);
+        }
+        
+        /* Footer */
+        .footer {
+            background: rgba(0, 0, 0, 0.9);
+            color: white;
+            padding: 3rem 2rem 1rem;
+            margin-top: 4rem;
+        }
+        
+        .footer-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+        }
+        
+        .footer-section h3 {
+            color: #667eea;
+            margin-bottom: 1rem;
+            font-size: 1.2rem;
+        }
+        
+        .footer-section ul {
+            list-style: none;
+        }
+        
+        .footer-section ul li {
+            margin-bottom: 0.5rem;
+        }
+        
+        .footer-section a {
+            color: #ccc;
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+        
+        .footer-section a:hover {
+            color: #667eea;
+        }
+        
+        .footer-bottom {
+            text-align: center;
+            padding-top: 2rem;
+            margin-top: 2rem;
+            border-top: 1px solid rgba(255,255,255,0.1);
+            color: #888;
+        }
+        
+        /* Messages/Alerts */
+        .messages {
+            max-width: 1200px;
+            margin: 1rem auto;
+            padding: 0 2rem;
+        }
+        
+        .alert {
+            padding: 1rem 1.5rem;
+            border-radius: 8px;
+            margin-bottom: 1rem;
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            animation: slideIn 0.3s ease;
+        }
+        
+        @keyframes slideIn {
+            from {
+                transform: translateY(-20px);
+                opacity: 0;
+            }
+            to {
+                transform: translateY(0);
+                opacity: 1;
+            }
+        }
+        
+        .alert-success {
+            background: #d4edda;
+            color: #155724;
+            border-left: 4px solid #28a745;
+        }
+        
+        .alert-error {
+            background: #f8d7da;
+            color: #721c24;
+            border-left: 4px solid #dc3545;
+        }
+        
+        .alert-info {
+            background: #d1ecf1;
+            color: #0c5460;
+            border-left: 4px solid #17a2b8;
+        }
+        
+        .alert-warning {
+            background: #fff3cd;
+            color: #856404;
+            border-left: 4px solid #ffc107;
+        }
+        
+        /* Responsive */
+        @media (max-width: 768px) {
+            .nav-menu {
+                display: none;
+                flex-direction: column;
+                position: absolute;
+                top: 100%;
+                left: 0;
+                right: 0;
+                background: white;
+                padding: 1rem;
+                box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+            }
+            
+            .nav-menu.active {
+                display: flex;
+            }
+            
+            .mobile-toggle {
+                display: block;
+            }
+            
+            .footer-container {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+    
+    {% block extra_css %}{% endblock %}
+</head>
+<body>
+    <!-- Navbar -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <a href="{% url 'index' %}" class="nav-logo">
+                <i class="fas fa-university"></i>
+                <span>SparksFinance</span>
+            </a>
+            
+            <div class="mobile-toggle" onclick="toggleMenu()">
+                <i class="fas fa-bars"></i>
+            </div>
+            
+            <ul class="nav-menu" id="navMenu">
+                <li><a href="{% url 'index' %}" class="nav-link"><i class="fas fa-home"></i> Home</a></li>
+                
+                {% if user.is_authenticated %}
+                    <li><a href="{% url 'dashboard' %}" class="nav-link"><i class="fas fa-chart-line"></i> Dashboard</a></li>
+                    <li><a href="{% url 'users' %}" class="nav-link"><i class="fas fa-users"></i> Users</a></li>
+                    <li><a href="{% url 'transfer_money' %}" class="nav-link"><i class="fas fa-exchange-alt"></i> Transfer</a></li>
+                    <li><a href="{% url 'transaction_history' %}" class="nav-link"><i class="fas fa-history"></i> History</a></li>
+                    <li><a href="{% url 'logout' %}" class="nav-link btn-secondary">Logout</a></li>
+                {% else %}
+                    <li><a href="{% url 'login' %}" class="nav-link">Login</a></li>
+                    <li><a href="{% url 'register' %}" class="nav-link btn-primary">Get Started</a></li>
+                {% endif %}
+                
+                {% if user.is_staff %}
+                    <li><a href="/admin/" class="nav-link" style="color: #ff6b6b;"><i class="fas fa-cog"></i> Admin</a></li>
+                {% endif %}
+            </ul>
+        </div>
+    </nav>
+    
+    <!-- Messages -->
+    {% if messages %}
+    <div class="messages">
+        {% for message in messages %}
+            <div class="alert alert-{{ message.tags }}">
+                <i class="fas fa-{% if message.tags == 'success' %}check-circle{% elif message.tags == 'error' %}times-circle{% elif message.tags == 'warning' %}exclamation-triangle{% else %}info-circle{% endif %}"></i>
+                <span>{{ message }}</span>
+            </div>
+        {% endfor %}
+    </div>
+    {% endif %}
+    
+    <!-- Content -->
+    <div class="content">
+        {% block content %}{% endblock %}
+    </div>
+    
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-container">
+            <div class="footer-section">
+                <h3>About SparksFinance</h3>
+                <p style="color: #ccc;">
+                    Production-ready banking application with enterprise-grade security and features.
+                </p>
+            </div>
+            
+            <div class="footer-section">
+                <h3>Quick Links</h3>
+                <ul>
+                    <li><a href="{% url 'index' %}">Home</a></li>
+                    {% if user.is_authenticated %}
+                        <li><a href="{% url 'dashboard' %}">Dashboard</a></li>
+                        <li><a href="{% url 'users' %}">Users</a></li>
+                    {% else %}
+                        <li><a href="{% url 'login' %}">Login</a></li>
+                        <li><a href="{% url 'register' %}">Register</a></li>
+                    {% endif %}
+                </ul>
+            </div>
+            
+            <div class="footer-section">
+                <h3>Resources</h3>
+                <ul>
+                    <li><a href="/admin/">Admin Panel</a></li>
+                    <li><a href="#">API Documentation</a></li>
+                    <li><a href="#">Terms of Service</a></li>
+                    <li><a href="#">Privacy Policy</a></li>
+                </ul>
+            </div>
+            
+            <div class="footer-section">
+                <h3>Connect</h3>
+                <p style="color: #ccc;">
+                    Built with Django • Python • PostgreSQL
+                </p>
+                <p style="color: #667eea; margin-top: 1rem;">
+                    &copy; 2026 SparksFinance
+                </p>
+            </div>
+        </div>
+        
+        <div class="footer-bottom">
+            <p>Enhanced Banking System | Built for The Sparks Foundation</p>
+        </div>
+    </footer>
+    
+    <!-- Scripts -->
+    <script>
+        function toggleMenu() {
+            document.getElementById('navMenu').classList.toggle('active');
+        }
+        
+        // Close messages after 5 seconds
+        setTimeout(() => {
+            const messages = document.querySelectorAll('.alert');
+            messages.forEach(msg => {
+                msg.style.opacity = '0';
+                msg.style.transform = 'translateX(100%)';
+                setTimeout(() => msg.remove(), 300);
+            });
+        }, 5000);
+    </script>
+    
+    {% block extra_js %}{% endblock %}
+</body>
+</html>

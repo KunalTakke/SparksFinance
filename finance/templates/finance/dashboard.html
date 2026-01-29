@@ -1,0 +1,374 @@
+{% extends 'finance/base.html' %}
+
+{% block title %}Dashboard - SparksFinance{% endblock %}
+
+{% block extra_css %}
+<style>
+    .dashboard {
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 3rem 2rem;
+    }
+    
+    .welcome-section {
+        background: rgba(255,255,255,0.15);
+        backdrop-filter: blur(10px);
+        padding: 2rem;
+        border-radius: 15px;
+        color: white;
+        margin-bottom: 3rem;
+    }
+    
+    .welcome-section h1 {
+        font-size: 2.5rem;
+        margin-bottom: 0.5rem;
+    }
+    
+    .welcome-section p {
+        opacity: 0.9;
+        font-size: 1.1rem;
+    }
+    
+    .stats-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+        gap: 2rem;
+        margin-bottom: 3rem;
+    }
+    
+    .stat-card {
+        background: white;
+        padding: 2rem;
+        border-radius: 15px;
+        box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+        transition: all 0.3s ease;
+    }
+    
+    .stat-card:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 15px 40px rgba(102, 126, 234, 0.2);
+    }
+    
+    .stat-header {
+        display: flex;
+        align-items: center;
+        gap: 1rem;
+        margin-bottom: 1rem;
+    }
+    
+    .stat-icon {
+        width: 50px;
+        height: 50px;
+        border-radius: 12px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 1.5rem;
+        color: white;
+    }
+    
+    .stat-icon.balance { background: linear-gradient(135deg, #667eea, #764ba2); }
+    .stat-icon.sent { background: linear-gradient(135deg, #f093fb, #f5576c); }
+    .stat-icon.received { background: linear-gradient(135deg, #4facfe, #00f2fe); }
+    .stat-icon.limit { background: linear-gradient(135deg, #43e97b, #38f9d7); }
+    
+    .stat-value {
+        font-size: 2.5rem;
+        font-weight: 700;
+        color: #333;
+        margin-bottom: 0.3rem;
+    }
+    
+    .stat-label {
+        color: #666;
+        font-size: 0.95rem;
+    }
+    
+    .transactions-section {
+        background: white;
+        padding: 2rem;
+        border-radius: 15px;
+        box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+    }
+    
+    .section-header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-bottom: 2rem;
+    }
+    
+    .section-header h2 {
+        color: #333;
+        font-size: 1.8rem;
+    }
+    
+    .view-all {
+        color: #667eea;
+        text-decoration: none;
+        font-weight: 600;
+    }
+    
+    .view-all:hover {
+        text-decoration: underline;
+    }
+    
+    .transaction-list {
+        list-style: none;
+    }
+    
+    .transaction-item {
+        padding: 1.5rem;
+        border-bottom: 1px solid #f0f0f0;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        transition: all 0.2s ease;
+    }
+    
+    .transaction-item:hover {
+        background: #f8f9ff;
+    }
+    
+    .transaction-item:last-child {
+        border-bottom: none;
+    }
+    
+    .transaction-info {
+        display: flex;
+        align-items: center;
+        gap: 1rem;
+    }
+    
+    .transaction-icon {
+        width: 45px;
+        height: 45px;
+        border-radius: 12px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 1.2rem;
+    }
+    
+    .transaction-icon.sent {
+        background: #fff3e0;
+        color: #f57c00;
+    }
+    
+    .transaction-icon.received {
+        background: #e8f5e9;
+        color: #2e7d32;
+    }
+    
+    .transaction-details h4 {
+        color: #333;
+        margin-bottom: 0.3rem;
+    }
+    
+    .transaction-details p {
+        color: #666;
+        font-size: 0.9rem;
+    }
+    
+    .transaction-amount {
+        text-align: right;
+    }
+    
+    .amount {
+        font-size: 1.3rem;
+        font-weight: 700;
+    }
+    
+    .amount.positive {
+        color: #28a745;
+    }
+    
+    .amount.negative {
+        color: #dc3545;
+    }
+    
+    .transaction-date {
+        color: #999;
+        font-size: 0.85rem;
+    }
+    
+    .quick-actions {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+        gap: 1rem;
+        margin-top: 2rem;
+    }
+    
+    .action-card {
+        background: white;
+        padding: 1.5rem;
+        border-radius: 12px;
+        text-align: center;
+        text-decoration: none;
+        color: #333;
+        transition: all 0.3s ease;
+        box-shadow: 0 5px 20px rgba(0,0,0,0.08);
+    }
+    
+    .action-card:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 10px 30px rgba(102, 126, 234, 0.2);
+    }
+    
+    .action-card i {
+        font-size: 2.5rem;
+        margin-bottom: 1rem;
+        background: linear-gradient(135deg, #667eea, #764ba2);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+    }
+    
+    .action-card h3 {
+        font-size: 1.1rem;
+    }
+    
+    .empty-state {
+        text-align: center;
+        padding: 3rem;
+        color: #999;
+    }
+    
+    .empty-state i {
+        font-size: 4rem;
+        margin-bottom: 1rem;
+        color: #ddd;
+    }
+</style>
+{% endblock %}
+
+{% block content %}
+<div class="dashboard">
+    <!-- Welcome Section -->
+    <div class="welcome-section">
+        <h1>Welcome back, {{ account.user.get_full_name|default:account.user.username }}! 👋</h1>
+        <p>Account: <strong>{{ account.account_number }}</strong> | Branch: <strong>{{ account.branch }}</strong></p>
+    </div>
+    
+    <!-- Stats Cards -->
+    <div class="stats-grid">
+        <div class="stat-card">
+            <div class="stat-header">
+                <div class="stat-icon balance">
+                    <i class="fas fa-wallet"></i>
+                </div>
+                <div>
+                    <div class="stat-label">Current Balance</div>
+                    <div class="stat-value">${{ account.balance|floatformat:2 }}</div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="stat-card">
+            <div class="stat-header">
+                <div class="stat-icon sent">
+                    <i class="fas fa-arrow-up"></i>
+                </div>
+                <div>
+                    <div class="stat-label">Sent Today</div>
+                    <div class="stat-value">${{ today_sent|floatformat:2 }}</div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="stat-card">
+            <div class="stat-header">
+                <div class="stat-icon received">
+                    <i class="fas fa-arrow-down"></i>
+                </div>
+                <div>
+                    <div class="stat-label">Received Today</div>
+                    <div class="stat-value">${{ today_received|floatformat:2 }}</div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="stat-card">
+            <div class="stat-header">
+                <div class="stat-icon limit">
+                    <i class="fas fa-chart-line"></i>
+                </div>
+                <div>
+                    <div class="stat-label">Daily Limit Remaining</div>
+                    <div class="stat-value">${{ remaining_daily_limit|floatformat:2 }}</div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <!-- Recent Transactions -->
+    <div class="transactions-section">
+        <div class="section-header">
+            <h2><i class="fas fa-history"></i> Recent Transactions</h2>
+            <a href="{% url 'transaction_history' %}" class="view-all">
+                View All <i class="fas fa-arrow-right"></i>
+            </a>
+        </div>
+        
+        {% if sent_transactions or received_transactions %}
+        <ul class="transaction-list">
+            {% for txn in sent_transactions|slice:":5" %}
+            <li class="transaction-item">
+                <div class="transaction-info">
+                    <div class="transaction-icon sent">
+                        <i class="fas fa-arrow-up"></i>
+                    </div>
+                    <div class="transaction-details">
+                        <h4>Sent to {{ txn.receiver.user.get_full_name }}</h4>
+                        <p>{{ txn.created_at|date:"M d, Y - g:i A" }}</p>
+                    </div>
+                </div>
+                <div class="transaction-amount">
+                    <div class="amount negative">-${{ txn.amount|floatformat:2 }}</div>
+                    <div class="transaction-date">{{ txn.transaction_id }}</div>
+                </div>
+            </li>
+            {% endfor %}
+            
+            {% for txn in received_transactions|slice:":5" %}
+            <li class="transaction-item">
+                <div class="transaction-info">
+                    <div class="transaction-icon received">
+                        <i class="fas fa-arrow-down"></i>
+                    </div>
+                    <div class="transaction-details">
+                        <h4>Received from {{ txn.sender.user.get_full_name }}</h4>
+                        <p>{{ txn.created_at|date:"M d, Y - g:i A" }}</p>
+                    </div>
+                </div>
+                <div class="transaction-amount">
+                    <div class="amount positive">+${{ txn.amount|floatformat:2 }}</div>
+                    <div class="transaction-date">{{ txn.transaction_id }}</div>
+                </div>
+            </li>
+            {% endfor %}
+        </ul>
+        {% else %}
+        <div class="empty-state">
+            <i class="fas fa-receipt"></i>
+            <p>No transactions yet</p>
+        </div>
+        {% endif %}
+    </div>
+    
+    <!-- Quick Actions -->
+    <div class="quick-actions">
+        <a href="{% url 'transfer_money' %}" class="action-card">
+            <i class="fas fa-paper-plane"></i>
+            <h3>Send Money</h3>
+        </a>
+        <a href="{% url 'users' %}" class="action-card">
+            <i class="fas fa-users"></i>
+            <h3>View Users</h3>
+        </a>
+        <a href="{% url 'transaction_history' %}" class="action-card">
+            <i class="fas fa-file-invoice-dollar"></i>
+            <h3>All Transactions</h3>
+        </a>
+    </div>
+</div>
+{% endblock %}

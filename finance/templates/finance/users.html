@@ -1,0 +1,259 @@
+{% extends 'finance/base.html' %}
+
+{% block title %}Users - SparksFinance{% endblock %}
+
+{% block extra_css %}
+<style>
+    .page-header {
+        max-width: 1200px;
+        margin: 3rem auto 2rem;
+        padding: 0 2rem;
+        color: white;
+    }
+    
+    .page-header h1 {
+        font-size: 2.5rem;
+        margin-bottom: 0.5rem;
+    }
+    
+    .page-header p {
+        opacity: 0.9;
+    }
+    
+    .users-container {
+        max-width: 1200px;
+        margin: 0 auto 4rem;
+        padding: 0 2rem;
+    }
+    
+    .search-bar {
+        background: white;
+        padding: 1.5rem;
+        border-radius: 10px;
+        margin-bottom: 2rem;
+        box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+    }
+    
+    .search-bar input {
+        width: 100%;
+        padding: 0.9rem 1.2rem;
+        border: 2px solid #e0e0e0;
+        border-radius: 10px;
+        font-size: 1rem;
+    }
+    
+    .search-bar input:focus {
+        outline: none;
+        border-color: #667eea;
+    }
+    
+    .users-table {
+        background: white;
+        border-radius: 15px;
+        overflow: hidden;
+        box-shadow: 0 10px 40px rgba(0,0,0,0.1);
+    }
+    
+    table {
+        width: 100%;
+        border-collapse: collapse;
+    }
+    
+    thead {
+        background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+        color: white;
+    }
+    
+    th {
+        padding: 1.2rem;
+        text-align: left;
+        font-weight: 600;
+    }
+    
+    td {
+        padding: 1.2rem;
+        border-bottom: 1px solid #f0f0f0;
+    }
+    
+    tbody tr {
+        transition: all 0.2s ease;
+    }
+    
+    tbody tr:hover {
+        background: #f8f9ff;
+    }
+    
+    .balance {
+        font-weight: 600;
+        color: #28a745;
+        font-size: 1.1rem;
+    }
+    
+    .btn-transfer {
+        background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+        color: white;
+        padding: 0.6rem 1.5rem;
+        border-radius: 8px;
+        text-decoration: none;
+        transition: all 0.3s ease;
+        display: inline-block;
+    }
+    
+    .btn-transfer:hover {
+        transform: translateY(-2px);
+        box-shadow: 0 5px 15px rgba(102, 126, 234, 0.3);
+    }
+    
+    .badge {
+        display: inline-block;
+        padding: 0.4rem 0.8rem;
+        border-radius: 20px;
+        font-size: 0.85rem;
+        font-weight: 600;
+    }
+    
+    .badge-active {
+        background: #d4edda;
+        color: #155724;
+    }
+    
+    .badge-inactive {
+        background: #f8d7da;
+        color: #721c24;
+    }
+    
+    .pagination {
+        display: flex;
+        justify-content: center;
+        gap: 0.5rem;
+        margin-top: 2rem;
+    }
+    
+    .pagination a,
+    .pagination span {
+        padding: 0.6rem 1.2rem;
+        background: white;
+        border-radius: 8px;
+        text-decoration: none;
+        color: #667eea;
+        transition: all 0.2s ease;
+    }
+    
+    .pagination a:hover {
+        background: #667eea;
+        color: white;
+    }
+    
+    .pagination .current {
+        background: #667eea;
+        color: white;
+    }
+    
+    /* Responsive Table */
+    @media (max-width: 768px) {
+        .users-table {
+            overflow-x: auto;
+        }
+        
+        table {
+            min-width: 600px;
+        }
+    }
+</style>
+{% endblock %}
+
+{% block content %}
+<div class="page-header">
+    <h1><i class="fas fa-users"></i> All Users</h1>
+    <p>View and manage all registered bank accounts</p>
+</div>
+
+<div class="users-container">
+    <!-- Search Bar -->
+    <div class="search-bar">
+        <form method="get">
+            <input type="text" 
+                   name="search" 
+                   placeholder="🔍 Search by name, account number, or branch..." 
+                   value="{{ search_query }}"
+                   autocomplete="off">
+        </form>
+    </div>
+    
+    <!-- Users Table -->
+    <div class="users-table">
+        <table>
+            <thead>
+                <tr>
+                    <th><i class="fas fa-hashtag"></i> Account Number</th>
+                    <th><i class="fas fa-user"></i> Name</th>
+                    <th><i class="fas fa-building"></i> Branch</th>
+                    <th><i class="fas fa-envelope"></i> Email</th>
+                    <th><i class="fas fa-wallet"></i> Balance</th>
+                    <th><i class="fas fa-check-circle"></i> Status</th>
+                    <th><i class="fas fa-exchange-alt"></i> Action</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for account in page_obj %}
+                <tr>
+                    <td><strong>{{ account.account_number }}</strong></td>
+                    <td>{{ account.user.get_full_name|default:account.user.username }}</td>
+                    <td>{{ account.branch }}</td>
+                    <td>{{ account.user.email }}</td>
+                    <td class="balance">${{ account.balance|floatformat:2 }}</td>
+                    <td>
+                        {% if account.is_active %}
+                            <span class="badge badge-active">Active</span>
+                        {% else %}
+                            <span class="badge badge-inactive">Inactive</span>
+                        {% endif %}
+                    </td>
+                    <td>
+                        {% if account != request.user.bank_account and account.is_active %}
+                            <a href="{% url 'transfer_money' %}?to={{ account.account_number }}" class="btn-transfer">
+                                <i class="fas fa-paper-plane"></i> Transfer
+                            </a>
+                        {% endif %}
+                    </td>
+                </tr>
+                {% empty %}
+                <tr>
+                    <td colspan="7" style="text-align: center; padding: 3rem; color: #999;">
+                        <i class="fas fa-inbox" style="font-size: 3rem; display: block; margin-bottom: 1rem;"></i>
+                        No users found
+                    </td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </div>
+    
+    <!-- Pagination -->
+    {% if page_obj.has_other_pages %}
+    <div class="pagination">
+        {% if page_obj.has_previous %}
+            <a href="?page=1{% if search_query %}&search={{ search_query }}{% endif %}">
+                <i class="fas fa-angle-double-left"></i> First
+            </a>
+            <a href="?page={{ page_obj.previous_page_number }}{% if search_query %}&search={{ search_query }}{% endif %}">
+                <i class="fas fa-angle-left"></i> Previous
+            </a>
+        {% endif %}
+        
+        <span class="current">
+            Page {{ page_obj.number }} of {{ page_obj.paginator.num_pages }}
+        </span>
+        
+        {% if page_obj.has_next %}
+            <a href="?page={{ page_obj.next_page_number }}{% if search_query %}&search={{ search_query }}{% endif %}">
+                Next <i class="fas fa-angle-right"></i>
+            </a>
+            <a href="?page={{ page_obj.paginator.num_pages }}{% if search_query %}&search={{ search_query }}{% endif %}">
+                Last <i class="fas fa-angle-double-right"></i>
+            </a>
+        {% endif %}
+    </div>
+    {% endif %}
+</div>
+{% endblock %}

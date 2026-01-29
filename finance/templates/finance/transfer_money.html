@@ -1,0 +1,275 @@
+{% extends 'finance/base.html' %}
+
+{% block title %}Transfer Money - SparksFinance{% endblock %}
+
+{% block extra_css %}
+<style>
+    .transfer-container {
+        max-width: 600px;
+        margin: 3rem auto 4rem;
+        padding: 0 2rem;
+    }
+    
+    .transfer-card {
+        background: white;
+        padding: 3rem;
+        border-radius: 20px;
+        box-shadow: 0 20px 60px rgba(0,0,0,0.15);
+    }
+    
+    .transfer-header {
+        text-align: center;
+        margin-bottom: 2.5rem;
+    }
+    
+    .transfer-header h2 {
+        color: #333;
+        font-size: 2rem;
+        margin-bottom: 0.5rem;
+    }
+    
+    .transfer-header p {
+        color: #666;
+    }
+    
+    .balance-display {
+        background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+        color: white;
+        padding: 1.5rem;
+        border-radius: 12px;
+        margin-bottom: 2rem;
+        text-align: center;
+    }
+    
+    .balance-display .label {
+        font-size: 0.9rem;
+        opacity: 0.9;
+        margin-bottom: 0.5rem;
+    }
+    
+    .balance-display .amount {
+        font-size: 2.5rem;
+        font-weight: 700;
+    }
+    
+    .form-group {
+        margin-bottom: 1.8rem;
+    }
+    
+    .form-group label {
+        display: block;
+        margin-bottom: 0.6rem;
+        color: #333;
+        font-weight: 600;
+        font-size: 0.95rem;
+    }
+    
+    .form-group input,
+    .form-group select,
+    .form-group textarea {
+        width: 100%;
+        padding: 0.9rem 1.2rem;
+        border: 2px solid #e0e0e0;
+        border-radius: 10px;
+        font-size: 1rem;
+        font-family: inherit;
+        transition: all 0.3s ease;
+    }
+    
+    .form-group input:focus,
+    .form-group select:focus,
+    .form-group textarea:focus {
+        outline: none;
+        border-color: #667eea;
+        box-shadow: 0 0 0 3px rgba(102, 126, 234, 0.1);
+    }
+    
+    .form-group textarea {
+        resize: vertical;
+        min-height: 80px;
+    }
+    
+    .checkbox-group {
+        display: flex;
+        align-items: center;
+        gap: 0.8rem;
+        padding: 1rem;
+        background: #f8f9ff;
+        border-radius: 10px;
+        margin-bottom: 1.5rem;
+    }
+    
+    .checkbox-group input[type="checkbox"] {
+        width: 20px;
+        height: 20px;
+        cursor: pointer;
+    }
+    
+    .checkbox-group label {
+        margin: 0;
+        cursor: pointer;
+        color: #333;
+    }
+    
+    .btn-transfer {
+        width: 100%;
+        padding: 1.2rem;
+        background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+        color: white;
+        border: none;
+        border-radius: 10px;
+        font-size: 1.2rem;
+        font-weight: 600;
+        cursor: pointer;
+        transition: all 0.3s ease;
+    }
+    
+    .btn-transfer:hover:not(:disabled) {
+        transform: translateY(-2px);
+        box-shadow: 0 10px 30px rgba(102, 126, 234, 0.3);
+    }
+    
+    .btn-transfer:disabled {
+        opacity: 0.5;
+        cursor: not-allowed;
+    }
+    
+    .error-message {
+        background: #fff3cd;
+        border-left: 4px solid #ffc107;
+        padding: 1rem;
+        border-radius: 8px;
+        margin-bottom: 1.5rem;
+        color: #856404;
+    }
+    
+    .help-text {
+        font-size: 0.85rem;
+        color: #999;
+        margin-top: 0.3rem;
+    }
+    
+    .preview-box {
+        background: #f8f9ff;
+        padding: 1.5rem;
+        border-radius: 10px;
+        margin-top: 1.5rem;
+        border: 2px dashed #667eea;
+    }
+    
+    .preview-box h4 {
+        color: #667eea;
+        margin-bottom: 1rem;
+    }
+    
+    .preview-item {
+        display: flex;
+        justify-content: space-between;
+        padding: 0.5rem 0;
+        color: #333;
+    }
+    
+    .preview-item strong {
+        color: #667eea;
+    }
+</style>
+{% endblock %}
+
+{% block content %}
+<div class="transfer-container">
+    <div class="transfer-card">
+        <div class="transfer-header">
+            <h2><i class="fas fa-paper-plane"></i> Transfer Money</h2>
+            <p>Send money securely to another account</p>
+        </div>
+        
+        <!-- Current Balance -->
+        <div class="balance-display">
+            <div class="label">Your Current Balance</div>
+            <div class="amount">${{ account.balance|floatformat:2 }}</div>
+        </div>
+        
+        <!-- Error Messages -->
+        {% if form.errors %}
+        <div class="error-message">
+            <strong><i class="fas fa-exclamation-triangle"></i> Please fix the following errors:</strong>
+            <ul style="margin-top: 0.5rem; margin-left: 1.5rem;">
+                {% for field in form %}
+                    {% for error in field.errors %}
+                        <li>{{ field.label }}: {{ error }}</li>
+                    {% endfor %}
+                {% endfor %}
+                {% for error in form.non_field_errors %}
+                    <li>{{ error }}</li>
+                {% endfor %}
+            </ul>
+        </div>
+        {% endif %}
+        
+        <!-- Transfer Form -->
+        <form method="post" id="transferForm">
+            {% csrf_token %}
+            
+            <div class="form-group">
+                <label for="id_receiver_account_number">
+                    <i class="fas fa-user"></i> Receiver Account Number
+                </label>
+                {{ form.receiver_account_number }}
+                <div class="help-text">Enter the account number of the recipient</div>
+            </div>
+            
+            <div class="form-group">
+                <label for="id_amount">
+                    <i class="fas fa-dollar-sign"></i> Amount
+                </label>
+                {{ form.amount }}
+                <div class="help-text">
+                    Daily limit remaining: ${{ account.daily_transfer_limit|subtract:account.get_daily_transfer_total|floatformat:2 }}
+                </div>
+            </div>
+            
+            <div class="form-group">
+                <label for="id_description">
+                    <i class="fas fa-comment"></i> Description (Optional)
+                </label>
+                {{ form.description }}
+                <div class="help-text">Add a note for this transfer</div>
+            </div>
+            
+            <div class="checkbox-group">
+                {{ form.confirm }}
+                <label for="id_confirm">
+                    I confirm this transfer and understand it cannot be reversed
+                </label>
+            </div>
+            
+            <button type="submit" class="btn-transfer">
+                <i class="fas fa-paper-plane"></i> Transfer Money
+            </button>
+        </form>
+    </div>
+</div>
+
+{% block extra_js %}
+<script>
+    // Real-time balance validation
+    const amountInput = document.querySelector('input[name="amount"]');
+    const currentBalance = {{ account.balance }};
+    
+    if (amountInput) {
+        amountInput.addEventListener('input', function() {
+            const amount = parseFloat(this.value) || 0;
+            const submitBtn = document.querySelector('.btn-transfer');
+            
+            if (amount > currentBalance) {
+                this.style.borderColor = '#dc3545';
+                submitBtn.disabled = true;
+            } else {
+                this.style.borderColor = '#28a745';
+                submitBtn.disabled = false;
+            }
+        });
+    }
+</script>
+{% endblock %}
+{% endblock %}

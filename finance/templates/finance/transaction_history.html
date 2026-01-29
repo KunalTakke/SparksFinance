@@ -1,0 +1,381 @@
+{% extends 'finance/base.html' %}
+
+{% block title %}Transaction History - SparksFinance{% endblock %}
+
+{% block extra_css %}
+<style>
+    .history-container {
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 3rem 2rem 4rem;
+    }
+    
+    .page-header {
+        color: white;
+        margin-bottom: 3rem;
+    }
+    
+    .page-header h1 {
+        font-size: 2.5rem;
+        margin-bottom: 0.5rem;
+    }
+    
+    .filter-card {
+        background: white;
+        padding: 2rem;
+        border-radius: 15px;
+        margin-bottom: 2rem;
+        box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+    }
+    
+    .filter-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+        gap: 1.5rem;
+    }
+    
+    .filter-group label {
+        display: block;
+        margin-bottom: 0.5rem;
+        color: #333;
+        font-weight: 600;
+        font-size: 0.9rem;
+    }
+    
+    .filter-group select,
+    .filter-group input {
+        width: 100%;
+        padding: 0.7rem 1rem;
+        border: 2px solid #e0e0e0;
+        border-radius: 8px;
+        font-size: 0.95rem;
+    }
+    
+    .filter-actions {
+        margin-top: 1.5rem;
+        display: flex;
+        gap: 1rem;
+    }
+    
+    .btn-filter {
+        padding: 0.7rem 2rem;
+        background: #667eea;
+        color: white;
+        border: none;
+        border-radius: 8px;
+        cursor: pointer;
+        font-weight: 600;
+    }
+    
+    .btn-filter:hover {
+        background: #5568d3;
+    }
+    
+    .btn-reset {
+        padding: 0.7rem 2rem;
+        background: #f0f0f0;
+        color: #333;
+        border: none;
+        border-radius: 8px;
+        cursor: pointer;
+        font-weight: 600;
+    }
+    
+    .transactions-card {
+        background: white;
+        border-radius: 15px;
+        overflow: hidden;
+        box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+    }
+    
+    .transaction-item {
+        padding: 1.5rem;
+        border-bottom: 1px solid #f0f0f0;
+        display: grid;
+        grid-template-columns: auto 1fr auto auto;
+        gap: 1.5rem;
+        align-items: center;
+        transition: all 0.2s ease;
+    }
+    
+    .transaction-item:hover {
+        background: #f8f9ff;
+    }
+    
+    .transaction-item:last-child {
+        border-bottom: none;
+    }
+    
+    .txn-icon {
+        width: 50px;
+        height: 50px;
+        border-radius: 12px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 1.3rem;
+    }
+    
+    .txn-icon.sent {
+        background: linear-gradient(135deg, #f093fb, #f5576c);
+        color: white;
+    }
+    
+    .txn-icon.received {
+        background: linear-gradient(135deg, #4facfe, #00f2fe);
+        color: white;
+    }
+    
+    .txn-details h4 {
+        color: #333;
+        margin-bottom: 0.3rem;
+        font-size: 1.1rem;
+    }
+    
+    .txn-details p {
+        color: #666;
+        font-size: 0.9rem;
+    }
+    
+    .txn-id {
+        color: #999;
+        font-size: 0.8rem;
+        font-family: monospace;
+    }
+    
+    .txn-amount {
+        font-size: 1.5rem;
+        font-weight: 700;
+        text-align: right;
+    }
+    
+    .txn-amount.positive {
+        color: #28a745;
+    }
+    
+    .txn-amount.negative {
+        color: #dc3545;
+    }
+    
+    .txn-status {
+        text-align: center;
+    }
+    
+    .status-badge {
+        display: inline-block;
+        padding: 0.5rem 1rem;
+        border-radius: 20px;
+        font-size: 0.85rem;
+        font-weight: 600;
+        min-width: 100px;
+    }
+    
+    .status-completed {
+        background: #d4edda;
+        color: #155724;
+    }
+    
+    .status-pending {
+        background: #fff3cd;
+        color: #856404;
+    }
+    
+    .status-failed {
+        background: #f8d7da;
+        color: #721c24;
+    }
+    
+    .status-cancelled {
+        background: #e2e3e5;
+        color: #383d41;
+    }
+    
+    .empty-state {
+        text-align: center;
+        padding: 4rem;
+        color: #999;
+    }
+    
+    .empty-state i {
+        font-size: 4rem;
+        margin-bottom: 1rem;
+        color: #ddd;
+    }
+    
+    .pagination {
+        display: flex;
+        justify-content: center;
+        gap: 0.5rem;
+        margin-top: 2rem;
+        flex-wrap: wrap;
+    }
+    
+    .pagination a,
+    .pagination span {
+        padding: 0.6rem 1.2rem;
+        background: white;
+        border-radius: 8px;
+        text-decoration: none;
+        color: #667eea;
+        transition: all 0.2s ease;
+        box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+    }
+    
+    .pagination a:hover {
+        background: #667eea;
+        color: white;
+        transform: translateY(-2px);
+    }
+    
+    .pagination .current {
+        background: #667eea;
+        color: white;
+    }
+    
+    @media (max-width: 768px) {
+        .transaction-item {
+            grid-template-columns: auto 1fr;
+            gap: 1rem;
+        }
+        
+        .txn-amount,
+        .txn-status {
+            grid-column: 2;
+        }
+    }
+</style>
+{% endblock %}
+
+{% block content %}
+<div class="history-container">
+    <div class="page-header">
+        <h1><i class="fas fa-history"></i> Transaction History</h1>
+        <p>View all your past transactions</p>
+    </div>
+    
+    <!-- Filters -->
+    <div class="filter-card">
+        <form method="get">
+            <div class="filter-grid">
+                <div class="filter-group">
+                    <label><i class="fas fa-filter"></i> Transaction Type</label>
+                    <select name="type">
+                        <option value="all" {% if filter_type == 'all' %}selected{% endif %}>All Transactions</option>
+                        <option value="sent" {% if filter_type == 'sent' %}selected{% endif %}>Sent</option>
+                        <option value="received" {% if filter_type == 'received' %}selected{% endif %}>Received</option>
+                    </select>
+                </div>
+                
+                <div class="filter-group">
+                    <label><i class="fas fa-check-circle"></i> Status</label>
+                    <select name="status">
+                        <option value="all" {% if filter_status == 'all' %}selected{% endif %}>All Statuses</option>
+                        <option value="completed" {% if filter_status == 'completed' %}selected{% endif %}>Completed</option>
+                        <option value="pending" {% if filter_status == 'pending' %}selected{% endif %}>Pending</option>
+                        <option value="failed" {% if filter_status == 'failed' %}selected{% endif %}>Failed</option>
+                    </select>
+                </div>
+                
+                <div class="filter-group">
+                    <label><i class="fas fa-calendar"></i> From Date</label>
+                    <input type="date" name="date_from" value="{{ date_from }}">
+                </div>
+                
+                <div class="filter-group">
+                    <label><i class="fas fa-calendar"></i> To Date</label>
+                    <input type="date" name="date_to" value="{{ date_to }}">
+                </div>
+            </div>
+            
+            <div class="filter-actions">
+                <button type="submit" class="btn-filter">
+                    <i class="fas fa-search"></i> Apply Filters
+                </button>
+                <a href="{% url 'transaction_history' %}" class="btn-reset">
+                    <i class="fas fa-undo"></i> Reset
+                </a>
+            </div>
+        </form>
+    </div>
+    
+    <!-- Transactions List -->
+    <div class="transactions-card">
+        {% if page_obj %}
+            {% for txn in page_obj %}
+            <div class="transaction-item">
+                <div class="txn-icon {% if txn.sender == account %}sent{% else %}received{% endif %}">
+                    <i class="fas fa-{% if txn.sender == account %}arrow-up{% else %}arrow-down{% endif %}"></i>
+                </div>
+                
+                <div class="txn-details">
+                    <h4>
+                        {% if txn.sender == account %}
+                            To: {{ txn.receiver.user.get_full_name|default:txn.receiver.user.username }}
+                        {% else %}
+                            From: {{ txn.sender.user.get_full_name|default:txn.sender.user.username }}
+                        {% endif %}
+                    </h4>
+                    <p>{{ txn.created_at|date:"M d, Y - g:i A" }}</p>
+                    <span class="txn-id">{{ txn.transaction_id }}</span>
+                </div>
+                
+                <div class="txn-amount {% if txn.sender == account %}negative{% else %}positive{% endif %}">
+                    {% if txn.sender == account %}-{% else %}+{% endif %}${{ txn.amount|floatformat:2 }}
+                </div>
+                
+                <div class="txn-status">
+                    <span class="status-badge status-{{ txn.status }}">
+                        {% if txn.status == 'completed' %}
+                            <i class="fas fa-check"></i>
+                        {% elif txn.status == 'pending' %}
+                            <i class="fas fa-clock"></i>
+                        {% elif txn.status == 'failed' %}
+                            <i class="fas fa-times"></i>
+                        {% else %}
+                            <i class="fas fa-ban"></i>
+                        {% endif %}
+                        {{ txn.get_status_display }}
+                    </span>
+                </div>
+            </div>
+            {% endfor %}
+        {% else %}
+        <div class="empty-state">
+            <i class="fas fa-inbox"></i>
+            <h3>No transactions found</h3>
+            <p>Start by making your first transfer!</p>
+            <a href="{% url 'transfer_money' %}" style="margin-top: 1rem; display: inline-block; color: #667eea; font-weight: 600;">
+                <i class="fas fa-paper-plane"></i> Transfer Money Now
+            </a>
+        </div>
+        {% endif %}
+    </div>
+    
+    <!-- Pagination -->
+    {% if page_obj.has_other_pages %}
+    <div class="pagination">
+        {% if page_obj.has_previous %}
+            <a href="?page=1{% if filter_type != 'all' %}&type={{ filter_type }}{% endif %}{% if filter_status != 'all' %}&status={{ filter_status }}{% endif %}{% if date_from %}&date_from={{ date_from }}{% endif %}{% if date_to %}&date_to={{ date_to }}{% endif %}">
+                <i class="fas fa-angle-double-left"></i>
+            </a>
+            <a href="?page={{ page_obj.previous_page_number }}{% if filter_type != 'all' %}&type={{ filter_type }}{% endif %}{% if filter_status != 'all' %}&status={{ filter_status }}{% endif %}{% if date_from %}&date_from={{ date_from }}{% endif %}{% if date_to %}&date_to={{ date_to }}{% endif %}">
+                <i class="fas fa-angle-left"></i>
+            </a>
+        {% endif %}
+        
+        <span class="current">
+            {{ page_obj.number }} / {{ page_obj.paginator.num_pages }}
+        </span>
+        
+        {% if page_obj.has_next %}
+            <a href="?page={{ page_obj.next_page_number }}{% if filter_type != 'all' %}&type={{ filter_type }}{% endif %}{% if filter_status != 'all' %}&status={{ filter_status }}{% endif %}{% if date_from %}&date_from={{ date_from }}{% endif %}{% if date_to %}&date_to={{ date_to }}{% endif %}">
+                <i class="fas fa-angle-right"></i>
+            </a>
+            <a href="?page={{ page_obj.paginator.num_pages }}{% if filter_type != 'all' %}&type={{ filter_type }}{% endif %}{% if filter_status != 'all' %}&status={{ filter_status }}{% endif %}{% if date_from %}&date_from={{ date_from }}{% endif %}{% if date_to %}&date_to={{ date_to }}{% endif %}">
+                <i class="fas fa-angle-double-right"></i>
+            </a>
+        {% endif %}
+    </div>
+    {% endif %}
+</div>
+{% endblock %}
