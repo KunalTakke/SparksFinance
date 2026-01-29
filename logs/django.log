@@ -856,3 +856,5 @@ django.urls.exceptions.NoReverseMatch: 'finance' is not a registered namespace
 INFO 2026-01-29 02:06:47,251 autoreload 26777 8756568640 /Users/kunalsachintakke/Documents/personal/projects/sparksFinanceProject/SparksFinance/finance/urls.py changed, reloading.
 INFO 2026-01-29 02:06:47,576 autoreload 27040 8756568640 Watching for file changes with StatReloader
 WARNING 2026-01-29 02:06:50,634 log 27040 6163656704 Not Found: /favicon.ico
+INFO 2026-01-29 02:33:48,765 autoreload 30328 8756568640 Watching for file changes with StatReloader
+WARNING 2026-01-29 02:34:02,357 log 30328 6170996736 Not Found: /favicon.ico
