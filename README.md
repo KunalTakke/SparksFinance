@@ -188,6 +188,6 @@ MIT
 
 ## Contact
 
-Kunal Sachin Takke - [LinkedIn](https://linkedin.com/in/kunalsachintakke) - kunalsachintakke@example.com
+Kunal Sachin Takke - [LinkedIn](https://linkedin.com/in/kunalsachintakke) 
 
 Project Link: [https://github.com/kunalsachintakke/SparksFinance](https://github.com/kunalsachintakke/SparksFinance)
